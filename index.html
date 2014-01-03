@@ -1,0 +1,67 @@
+<html>
+<head>
+</head>
+<body>
+	<span id="dogecoins">0</span> doge coins<br/>
+	<span id="dogehouses">0</span> doge houses<br/>
+	<span id="dogefood">0</span> doge food<br/>
+	<input id="buy_dogehouses" type="button" value="buy doge house (10 doge coins)" /><br/>
+	<input id="buy_dogefood" type="button" value="buy doge food (50 doge coins)" /><br/>
+
+
+	<script>
+
+		// init
+		var dogecoins = 0;
+		var dogehouses = 0;
+		var dogefood = 0;
+		document.getElementById("buy_dogehouses").disabled = true;
+		document.getElementById("buy_dogefood").disabled = true;
+
+		// app functions
+		document.getElementById("buy_dogehouses").onclick = function() {
+			if ( dogecoins > 9) {
+				dogecoins -= 10;
+				dogehouses++;
+			}
+			refresh();
+		} 
+
+		document.getElementById("buy_dogefood").onclick = function() {
+			if ( dogecoins > 49) {
+				dogecoins -= 50;
+				dogefood++;
+			}
+			refresh();
+		} 
+
+		function refresh() {
+			// refresh
+			document.getElementById("dogecoins").innerHTML = dogecoins;
+			document.getElementById("dogehouses").innerHTML = dogehouses;
+			document.getElementById("dogefood").innerHTML = dogefood;
+
+			if ( dogecoins >= 10) {
+				document.getElementById("buy_dogehouses").disabled = false;
+			} else {
+				document.getElementById("buy_dogehouses").disabled = true;
+			}
+			if ( dogecoins >= 50) {
+				document.getElementById("buy_dogefood").disabled = false;
+			} else {
+				document.getElementById("buy_dogefood").disabled = true;
+			}
+		}
+
+		// main loop
+		var onesecond = function() {
+			dogecoins++;
+			refresh();
+		}
+
+
+		window.setInterval(onesecond, 1000);
+
+	</script>
+</body>
+</html>
