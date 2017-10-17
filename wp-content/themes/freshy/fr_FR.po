@@ -198,7 +198,7 @@ msgstr "commentaires"
 
 #: index.php
 msgid "&laquo; Previous Entries"
-msgstr "&laquo; Entr&eacute;es Pr&eacute;c&eacute;dantes"
+msgstr "&laquo; Entr&eacute;es Pr&eacute;c&eacute;dentes"
 
 #: index.php
 msgid "Next Entries &raquo;"
