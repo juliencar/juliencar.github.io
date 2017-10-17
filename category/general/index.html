@@ -8,7 +8,7 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta name="verify-v1" content="EJ2NpUoBJt1jI8pSdXfbuhS9bvxRhKMBK+mK7HPvS+E=" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Julien Carnelos Blog </title>
+<title>Julien Carnelos Blog  &raquo; General</title>
  <!-- leave this for stats -->
 <link rel="stylesheet" href="juliencar.github.io/wp-content/themes/freshy/style.css" type="text/css" media="screen" title="Freshy"/>
 
@@ -51,6 +51,7 @@
 	<link rel='archives' title='octobre 2005' href='juliencar.github.io/2005/10/' />
 	<link rel='archives' title='septembre 2005' href='juliencar.github.io/2005/09/' />
 <link rel='dns-prefetch' href='//s.w.org' />
+
 		<script type="text/javascript">
 			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
 			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
@@ -76,7 +77,6 @@ img.emoji {
 
  
 
-<link rel='shortlink' href='http://wp.me/7AZy' />
 
 	<style type="text/css">
 	.menu li a {
@@ -193,7 +193,7 @@ img.emoji {
 	<!-- main menu -->
 			<ul class="menu">
 			
-			<li class="current_page_item">
+			<li class="page_item">
 				<a class="first_menu" href="juliencar.github.io">
 					Accueil				</a>
 			</li>
@@ -338,66 +338,6 @@ Partie suivante : Partie 3</p>
 		<hr style="display:none;"/>
 			
 						
-			<div class="post" id="post-167">
-				
-				<h2><a href="juliencar.github.io/2010/06/17/l%e2%80%99integration-continue-open-source-en-net-13/" rel="bookmark" title="Read L’intégration continue Open Source en .NET &#8211; 1/3">L’intégration continue Open Source en .NET &#8211; 1/3</a></h2>
-				<small class="date">
-					<span class="date_day">17</span>
-					<span class="date_month">06</span>
-					<span class="date_year">2010</span>
-				</small>
-				
-				<div class="entry">
-					<p>Article en 3 parties sur l&rsquo;intégration continue en technologie .NET à l&rsquo;aide uniquement d&rsquo;outils open-source.</p>
-<p>Cet article est sorti du tiroir puisqu&rsquo;il a 2 ans, mais il reste totalement d&rsquo;actualité.</p>
-<h3>Origines</h3>
-<p>On oppose généralement l’aspect industriel du développement à l’artisanal. Pour mieux saisir la signification de ce terme, je vous propose une petite histoire :</p>
-<p>Après quatre mois de développement, c’est le grand jour de la livraison. Georges, après avoir testé une dernière fois que son code compile, décide de déployer la version finale du site Intranet de la mairie.La démarche est maitrisée puisque cela fait maintenant une vingtaine de fois qu’il a répété l’opération. Comme à chaque fois, il commence par demander à son collègue sur quels fichiers il a travaillé. La liste connue, il récupère par le réseau ces fichiers, puis tente de compiler le projet. Chance, tout compile. La suite est plus délicate, Georges doit se connecter à distance au serveur, migrer la base de données et insérer les données mis à jour. Vient ensuite la partie copie des fichiers sur le serveur et redémarrage du serveur. A ce moment, si tout va bien, le site devrait être mis à jour. Malheureusement, au premier test, impossible de se logger.</p>
-<p>Si cette scène vous rappelle quelque chose, pas d’inquiétude car c’est courant et aujourd’hui de nombreuses sociétés fonctionnent dans ce mode de gestion. Mais l’industrialisation et l’automatisation sont maintenant un but plus facile que jamais à atteindre grace à de nombreux outils. Preuve en est également l’implication de Microsoft sur le thème « Gestion du cycle de vie logiciel » et la fourniture d’une offre complète avec la suite Team System et son serveur Team Foundation Server.</p>
-<p>Néamoins pour des raisons de simplicité, nous nous attacherons ici à présenter les concepts de l’intégration continue à l’aide uniquement d’outils open-source.</p>
-<h3>Concept</h3>
-<p><strong> </strong></p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net13-100abclip-image002-2.jpg"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net13-100abclip-image002-thumb.jpg" border="0" alt="clip_image002" width="488" height="291" /></a></p>
-<h6><em>Figure : Schématisation d’une chaîne d’intégration continue</em></h6>
-<p>L’intégration continue est un concept qui se base sur l’analogie avec une usine automatisée. Sauf qu’au lieu de constuire des voitures, on construit un logiciel. Cette « usine » est construite sur l’enchainement suivant :</p>
-<ol>
-<li>Un développeur travaille en local. Lorque ses modifications sont terminées, il archive son code sur un serveur gestionnaire de sources.</li>
-<li>A la detection d’un changement (ou suivant une règle temporelle paramétrée), le serveur d’intégration récupère la dernière version des sources et déclenche la contruction (« build ») de la solution.</li>
-<li>En étape facultative mais intéressante, il est possible d’appliquer des métriques et des tests sur la solution et d’en générer des rapports</li>
-<li>Enfin, la solution et le bilan de la construction sont déployés sur un serveur de résultat accessible à l’équipe projet. Dans le cas d’un sous traitance, ce portail peut aussi être mis à la disposition du client pour qu’il puisse constater l’avancement du projet. (Particulièrement utile dans le cadre d’une démarche agile).</li>
-</ol>
-<h3>Mis en pratique</h3>
-<p>Après ces concepts théoriques, nous allons nous attaquer à la réalisation de notre chaine d’intégration continue. Afin de garder un ensemble cohérent, nous restreindrons notre programme à une unique classe effectuant une manipulation sur une chaîne de caractères. Cette chaine sera fournie au programme en ligne de commande et le résultat sera affiché à l’écran.</p>
-<h3>Le programme</h3>
-<p>Il s’agit d’une classe « ChaineManip » qui contient une méthode « Manip ». La méthode Manip prend 2 strin en paramètre et affiche sur la sortie le résultat de l’opération. Afin de pouvoir être executé directement en ligne de commande, cette classe possède également une méthode Main qui délègue l’appel à ChaineManip.Manip. Voici le code :</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net13-100abimage-2.png"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net13-100abimage-thumb.png" border="0" alt="image" width="505" height="376" /></a></p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net13-100abclip-image003-2.gif"></a></p>
-<h6><em>Figure : ChaineManip.cs</em></h6>
-<h3>Tests unitaires</h3>
-<p>La démarche d’industrialisation s’accompagne naturellement d’une meilleure gestion des tests unitaires automatisés. Si vous n’avez encore jamais utilisé de framework, je vous invite à découvrir cette méthodologie (<a class="vt-p" href="http://www.dotnetguru.org/articles/outils/tests/nunit/nunit.htm">http://www.dotnetguru.org/articles/outils/tests/nunit/nunit.htm</a>).</p>
-<p>Dans notre cas, c’est le framework Nunit (<a class="vt-p" href="http://www.nunit.org">http://www.nunit.org</a>) que nous allons utiliser.</p>
-<p>Pour nous simplifier la tâche et éviter des soucis de compatibilité, nous allons utiliser les DLL fournis dans l’installation de NAnt (installé au chapitre suivant) et donc nous passer d’une installation de NUnit.</p>
-<p>Nous allons ainsi créer une classe de test « ChaineManipTest.cs » qui testera l’unique méthode « Manip » de notre classe programme. Sans entrer dans les détails, le code suivant teste le résult de l’appel de la méthode en le comparant avec un résultat attendu.</p>
-<p>L’objectif est de compiler le code de notre programme et d’exécuter les tests unitaires dans la continuité. Si un problème est détecté à l’exécution des tests, la construction est stoppée et la release jugée non fiable.</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net13-100abimage-4.png"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net13-100abimage-thumb-1.png" border="0" alt="image" width="502" height="324" /></a></p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net13-100abclip-image004-2.gif"></a></p>
-<h6><em>Figure : ChaineManipTest.cs</em></h6>
-<h3>Contrôle de source</h3>
-<p>Un gestionnaire de source est la pierre angulaire d’une organisation projet. Si vous n’avez jamais utilisé d’outil de ce genre, je vous incite à vous pencher fortement sur le sujet à travers des articles tels que <a class="vt-p" href="http://dev.nozav.org/intro_svn.html">http://dev.nozav.org/intro_svn.html</a>.</p>
-<p>Le principe est donc d’avoir ce serveur à la disposition de l’équipe. Quand un développeur a terminé une modification sur le code, il vérifie que sa modification compile sur son poste puis envoie les sources modifiés sur le serveur. L’outil le plus adapté pour notre chaîne est « Subversion » (<a class="vt-p" href="http://subversion.tigris.org">http://subversion.tigris.org</a>). Bien qu’en réalité il ne faudrait pas mettre en place de chaine d’intégration continue sans un bon gestionnaire de source, nous allons simplifier notre chaine en utilisant un simple dossier comme « repository » de code.</p>
-<p>La suite Partie 2.</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur L’intégration continue Open Source en .NET &#8211; 1/3</span></span></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
 			<div class="post" id="post-193">
 				
 				<h2><a href="juliencar.github.io/2010/05/17/actualites-mai-2010/" rel="bookmark" title="Read Actualités Mai 2010">Actualités Mai 2010</a></h2>
@@ -449,47 +389,6 @@ Partie suivante : Partie 3</p>
 				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur Actualités Mai 2010</span></span></small>
 				<br/>
 				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a>, <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
-			<div class="post" id="post-192">
-				
-				<h2><a href="juliencar.github.io/2008/09/07/google-chrome-bta/" rel="bookmark" title="Read Google Chrome &#8211; B&eacute;ta ?">Google Chrome &#8211; B&eacute;ta ?</a></h2>
-				<small class="date">
-					<span class="date_day">7</span>
-					<span class="date_month">09</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Ou la chronique d&rsquo;un lancement réussi, et <a href="juliencar.github.io/2006/06/23/chronique-d-un-lancement-rate/" target="_blank">ce n&rsquo;est pas évident pour tout le monde</a> (pas évident tout court, il faut reconnaître).</p>
-<p>Google vient donc de sortir son propre navigateur web, dont le développement a commencé il y a 2 ans. Ses principales caractéristiques sont :</p>
-<ul>
-<li>Moteur de rendu WebKit (le même que celui de Safari)</li>
-<li>Une gestion des fenêtres par processus avec la promesse qu&rsquo;en cas de plantage, le&nbsp; navigateur reste opérationnel pour les autres fenêtres.</li>
-<li>Un moteur Javascript qui compile le code et annonce une performance exceptionnelle.</li>
-</ul>
-<p>L&rsquo;objet de cet article n&rsquo;est pas un énième comparatif avec Firefox ou IE mais plutôt de commenter la réussite de Google sur son lancement Produit et sur la qualité de celui-ci. </p>
-<p>En effet, en installant un produit béta, je m&rsquo;attends à subir de nombreux plantages et déconvenues mais en passant une journée complète dessus : recherches google, gmail, deezer, hotmail, installation&nbsp; d&rsquo;un dotnetnuke sur mon local&nbsp; IIS7, je n&rsquo;ai eu aucune erreur&#8230;</p>
-<p>C&rsquo;est si rare que l&rsquo;on ne peut être qu&rsquo;ébahi devant une telle performance ! </p>
-<p>&nbsp;</p>
-<p><a href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewritergooglechromebta-10331ggchrome.jpg"><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="146" alt="ggchrome" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewritergooglechromebta-10331ggchrome-thumb.jpg" width="244" border="0"/></a> </p>
-<p><em>Hotmail Fail :Ouverture d&rsquo;hotmail sous chrome</em></p>
-<p>&nbsp;</p>
-<p>Sur la BD chrome, (et oui, ils ont fait une <a href="http://www.google.com/googlebooks/chrome/index.html" target="_blank">bande dessinée pour la sortie de Chrome</a>), Google met en avant son processus qualité et <a href="http://www.google.com/googlebooks/chrome/index.html#size=small&amp;page=9" target="_blank">ses tests unitaires automatisés et manuels</a>.</p>
-<p><a href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewritergooglechromebta-10331image-2.png"><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="244" alt="image" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewritergooglechromebta-10331image-thumb.png" width="164" border="0"/></a> </p>
-<p>C&rsquo;est un argumentaire de poids et un exemple qui démontre qu&rsquo;avec un environnement de tests performant, il est possible d&rsquo;ouvrir au public avec une version stabilisée.</p>
-<p>On parle souvent du principe « release early, release often » qui signifie qu&rsquo;il est important d&rsquo;avoir un feedback des utilisateurs régulier et le plus souvent possible.&nbsp; Malheureusement pour beaucoup d&rsquo;équipes cela signifie un rush sur les sorties avec une qualité discutable&#8230; </p>
-<p>J&rsquo;ajouterais donc aujourd&rsquo;hui un troisième principe : « release early, release often, <strong>but release it works</strong> » !</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2008/09/07/google-chrome-bta/#comments">11 Commentaires &#187;</a></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/web/" rel="category tag">Web</a></small>
 						
 			</div>
 				
@@ -554,82 +453,6 @@ Partie suivante : Partie 3</p>
 		<hr style="display:none;"/>
 			
 						
-			<div class="post" id="post-156">
-				
-				<h2><a href="juliencar.github.io/2008/02/23/compte-rendu-techdays-2008-partie-3/" rel="bookmark" title="Read Compte rendu Techdays 2008 &#8211; Partie 3">Compte rendu Techdays 2008 &#8211; Partie 3</a></h2>
-				<small class="date">
-					<span class="date_day">23</span>
-					<span class="date_month">02</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Pour terminer de manière exhaustive ce compte rendu, voici la description de la deuxième journée.</p>
-<p>&nbsp;</p>
-<p><strong><u>Présentation générale SQL Server 2008</u></strong> </p>
-<p>Session intéressante car nous avons eu droit à un point de vue 360° sur les nouveautés. </p>
-<p>Je retiens particulièrement le travail apporté sur la partie Reporting. En effet, le moteur était déjà très intéressant dans la version 2005 mais quelque peu limité dans son utilisation par des novices. Avec l&rsquo;arrivée de nouveaux outils orientés « Business », cela sera un argument de plus pour ce produit.</p>
-<p>&nbsp;</p>
-<p><strong><u>Software+Services : Introduction</u></strong></p>
-<p>Session décevante où la première partie a consisté en la lecture des slides.</p>
-<p>J&rsquo;aurais aimé une présentation plus argumentée avec une comparaison des différents moyens pouvant être mis en oeuvre pour mettre en place du Software + Services. </p>
-<p>&nbsp;</p>
-<p><strong><u>Commerce Server 2007</u></strong></p>
-<p>Ayant déjà une expérience sur les problématiques e-commerce et ayant manipulé un peu Commerce Server, j&rsquo;étais intéressé par le sujet. En effet, je souhaitais voir comment l&rsquo;outil était manipulé par des experts du domaine. Et bien, je continue à avoir un à avis favorable sur le sujet et je pense que CS2007 est un des solutions les plus pertinentes actuelles en e-commerce prêt à l&#8217;emploi. L&rsquo;aspect « Out-of-the-box » est un vrai argument avec un starter-site collant au maximum à un besoin standard.</p>
-<p>&nbsp;</p>
-<p><u><strong>Team System Rosario CTP</strong></u></p>
-<p>Session agréablement présentée par deux personnes de chez Winwise. Malheureusement le contenu était relativement pauvre en nouveautés. Rien de transcendant n&rsquo;a été présenté mais juste des améliorations du produit. La conclusion étant de toute façon : « <em>rien ne sert d&rsquo;attendre rosario, passez déjà à Team System 2008</em>« &#8230;</p>
-<p>&nbsp;</p>
-<p><strong><u>Conclusion</u></strong></p>
-<p>L&rsquo;impression d&rsquo;événement de l&rsquo;année pour les développeurs a été amplement confirmée par le nombre de visiteurs (16 000) et la qualité des 300 sessions présentées.&nbsp; Vivement les 2009 😉</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur Compte rendu Techdays 2008 &#8211; Partie 3</span></span></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
-			<div class="post" id="post-155">
-				
-				<h2><a href="juliencar.github.io/2008/02/21/compte-rendu-techdays-2008-partie-2/" rel="bookmark" title="Read Compte rendu Techdays 2008 &#8211; Partie 2">Compte rendu Techdays 2008 &#8211; Partie 2</a></h2>
-				<small class="date">
-					<span class="date_day">21</span>
-					<span class="date_month">02</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Suite de la première journée :</p>
-<h4><u>Nouveautés de C#3</u></h4>
-<p>Session en « speed » pour nous faire un maximum de démonstration sur les nouveautés du langage. Session la plus technique de mon parcours. Car oui je considère que si je viens aux Techndays, c&rsquo;est pour m&rsquo;ouvrir à des horizons et des perspectives différentes et pas pour me former en 2 jours&#8230; Néanmoins cette session fût très intéressante et a largement piqué ma curiosité sur les lambda expressions. </p>
-<p>En dehors de ces fameux lambda, on remarquera surtout la stabilité du langage pour sa troisième version. Preuve en est la qualification de « <em>Sucre syntaxique</em>« <em> </em>sur quasiment toutes les nouveautés du langage.</p>
-<p>&nbsp;</p>
-<h4><u>ROA &#8211; Symposium DNG</u></h4>
-<p>Je mets la note de meilleure session des Techdays à <a href="http://blogpro.toutantic.net/">Aurelien Pelletier</a> pour sa présentation sur ROA (Ressource Oriented Architecture).&nbsp; J&rsquo;ai apprécié d&rsquo;une part le speaker qui a su nous entretenir sur le sujet pendant une heure sans temps mort et d&rsquo;autre part le sujet qui préfigure d&rsquo;une évolution passionnante du web. J&rsquo;engage ceux qui ne connaissent pas encore le sujet à creuser tant cette façon de procéder est en adéquation avec l&rsquo;utilisation du web tel que nous le faisons aujourd&rsquo;hui.</p>
-<p>Pour les <a href="http://blogpro.toutantic.net/2008/02/15/slides-ressource-oriented-architecture/">slides, c&rsquo;est par ici</a>.</p>
-<h4><u>.NET et l&rsquo;Open Source &#8211; Symposium DNG</u></h4>
-<p>La grosse déception de la journée mais je vais tenter d&rsquo;être factuel. J&rsquo;avais une attente assez forte sur cette présentation car étant un « double compétence » Java/.NET, l&rsquo;intérêt d&rsquo;utiliser des outils et des frameworks Open Source est une évidence pour moi. J&rsquo;attendais donc de cette session des retours sur leur utilisation et quels étaient leurs conseils en la matière. </p>
-<p>Malheureusement, Didier Girard et son acolyte se sont contenté d&rsquo;expliquer les principes de l&rsquo;open source avec des généralités limite (Mettre Visual Studio Express sur une liste de produits open-source par exemple), de « torcher » en 3 slides une explication du fonctionnement de Spring et de Hibernate et de conclure que leur projet a été réussi grâce à ces technos.</p>
-<p>Je pense que le public présent n&rsquo;a pas pu apprécier cette session à sa juste valeur. En effet, beaucoup de personnes présentes dans la salle connaissaient déjà des frameworks Open Source et donc , ne pas avoir d&rsquo;éléments factuels, ni de comparaison technique ou grilles de décision fait que la conclusion de la session n&rsquo;a apporté aucune pierre au débat. </p>
-<p>Pour les personnes novices sur le sujet, la session a permis de dissiper un peu de F.U.D sur la peur d&rsquo;utiliser de l&rsquo;open source en environnement Microsoft mais dans ce cas, il fallait mieux mettre en avant et expliquer les outils Spring et Hibernate au lieu de se contenter d&rsquo;afficher le code des tutoriaux. On attendait une explication plus générale et donnant l&rsquo;eau à la bouche et l&rsquo;envie d&rsquo;installer chez soi. </p>
-<p>Dans tous les cas, je salue le travail réalisé pour cette session qui va dans le bon sens et j&rsquo;attends avec impatience les prochaines sessions sur le sujet&#8230;</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2008/02/21/compte-rendu-techdays-2008-partie-2/#comments">1 Commentaire &#187;</a></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
 			<div class="post" id="post-154">
 				
 				<h2><a href="juliencar.github.io/2008/02/19/compte-rendu-techdays-2008-partie-1/" rel="bookmark" title="Read Compte rendu Techdays 2008 &#8211; Partie 1">Compte rendu Techdays 2008 &#8211; Partie 1</a></h2>
@@ -664,9 +487,152 @@ Partie suivante : Partie 3</p>
 				
 		<hr style="display:none;"/>
 			
+						
+			<div class="post" id="post-153">
+				
+				<h2><a href="juliencar.github.io/2008/02/05/techdays-2008/" rel="bookmark" title="Read Techdays 2008">Techdays 2008</a></h2>
+				<small class="date">
+					<span class="date_day">5</span>
+					<span class="date_month">02</span>
+					<span class="date_year">2008</span>
+				</small>
+				
+				<div class="entry">
+					<p>C&rsquo;est la nouvelle tradition du « grand » RDV des développeurs .NET sur Paris.</p>
+<p>J&rsquo;y serais présent les deux premiers jours (12 et 13 février), donc si vous voulez qu&rsquo;on s&rsquo;y croise, n&rsquo;hésitez pas à me contacter !</p>
+<p>Et si vous trouvez que je ne poste pas beaucoup ces derniers temps&#8230; et bien à défaut de partager, j&rsquo;apprends beacoup de nouvelles choses 😉</p>
+				</div>
+				
+								
+				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2008/02/05/techdays-2008/#comments">1 Commentaire &#187;</a></small>
+				<br/>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
+						
+			</div>
+				
+		<hr style="display:none;"/>
+			
+						
+			<div class="post" id="post-151">
+				
+				<h2><a href="juliencar.github.io/2007/11/20/recevoir-gratuitement-par-sms-les-alertes-du-rseau-tbc-bordeaux/" rel="bookmark" title="Read Recevoir gratuitement par SMS les alertes du r&eacute;seau TBC Bordeaux">Recevoir gratuitement par SMS les alertes du r&eacute;seau TBC Bordeaux</a></h2>
+				<small class="date">
+					<span class="date_day">20</span>
+					<span class="date_month">11</span>
+					<span class="date_year">2007</span>
+				</small>
+				
+				<div class="entry">
+					<p>Tout est dit dans le titre (dédicacé SEO).</p>
+<p>Depuis que je travaille en centre-ville, je suis à la merci de la moindre panne du Tram. Le site InfosTBC offre sur son site, le moyen d&rsquo;être informé en temps-réel des pannes par flux RSS. Malheureusement, cela implique de se connecter sur le site ou sur son lecteur RSS pour connaître l&rsquo;état du réseau.</p>
+<p>Mon côté Geek-User m&rsquo;a fait chercher une solution plus mobile et surtout gratuite&#8230;</p>
+<p>Cette « astuce » consiste donc à utiliser <strong>Twitter</strong> qui permet de recevoir les notifications d&rsquo;amis par messages SMS.</p>
+<p><u>La procédure est la suivante :</u></p>
+<p>1. Créer un compte <a href="http://www.twitter.com">Twitter</a> si vous n&rsquo;en possédez pas</p>
+<p>2. Ajouter dans sa liste d&rsquo; amis le <a href="http://www.twitter.com/tbc">twitter de TBC</a> qui est un compte créé par mes soins. Le Twitter de TBC publie le contenu du <a href="http://www.infotbc.com/rss.asp">flux RSS disponible sur le site officiel</a> et se rafraîchit toutes les 10 minutes.</p>
+<p>3. Activer la notification des SMS. Cela nécessite d&rsquo;ajouter son numéro de téléphone sur son compte Twitter et d&rsquo;envoyer un SMS en angleterre (un et un seul!). </p>
+<p><strong>C&rsquo;est l&rsquo;unique coût de l&rsquo;opération </strong></p>
+<p>4. Bien vérifier que la notification mobile est active pour le « friend » TBC.</p>
+<p><em>Et c&rsquo;est tout.</em></p>
+<p><strong>PS :</strong> Si vous avez vraiment du temps à prendre vous pouvez également <a href="http://twitter.com/juliencarnelos">m&rsquo;ajouter dans votre liste</a>&#8230;</p>
+				</div>
+				
+								
+				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2007/11/20/recevoir-gratuitement-par-sms-les-alertes-du-rseau-tbc-bordeaux/#comments">9 Commentaires &#187;</a></small>
+				<br/>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
+						
+			</div>
+				
+		<hr style="display:none;"/>
+			
+						
+			<div class="post" id="post-150">
+				
+				<h2><a href="juliencar.github.io/2007/11/07/le-web-international/" rel="bookmark" title="Read Le Web international">Le Web international</a></h2>
+				<small class="date">
+					<span class="date_day">7</span>
+					<span class="date_month">11</span>
+					<span class="date_year">2007</span>
+				</small>
+				
+				<div class="entry">
+					<p>Le nom de domaine sera de plus en plus le nom canonique de la marque/du produit. Si je cherche le site de sony, je sais que c&rsquo;est sony.fr sans même vérifier.</p>
+<p>Au début de la vulgarisation du web, il était courant de trouver des grandes marques dont le nom était squatté. Vois <a href="http://www.sam-mag.com/archives/marques.htm">l&rsquo;affaire McDonalds</a> (qui remonte tout de même à 1994) dont le nom a été enregistré par un particulier. Plus près de nous, il existe le célèbre france2.com (dont je ne tiens pas à linker et qui est en plus <a href="http://fr.wikipedia.org/wiki/Not_safe_for_work">NSFW</a>). Je suis d&rsquo;ailleurs étonné de voir que le lien fonctionne encore&#8230;</p>
+<p>Les marques sont désormais bien au courant de ce genre de phénomène et il est commun de voir un nom de domaine squatté revenir au détenteur de la marque. Voir <a href="http://fr.wikipedia.org/wiki/Affaire_milka.fr">l&rsquo;épisode Milka litigieux</a>.</p>
+<p>Le phénomène à la mode, c&rsquo;est de béneficier de la renommé des gros sites « web2 » et de réserver le nom de domaine national. </p>
+<p>Pour Facebook, cela donne :</p>
+<ul>
+<li>facebook.jp</li>
+<li>facebook.de</li>
+<li>facebook.fr (mauvais exemple, mais il marchait encore il y a une semaine&#8230;)</li>
+<li>&#8230;</li>
+</ul>
+<p>Pour Twitter :</p>
+<ul>
+<li>twitter.fr</li>
+<li>twitter.de</li>
+<li>twitter.jp</li>
+<li>&#8230; </li>
+</ul>
+<p>Et pour d&rsquo;autres exemples : jajah.fr, technorati.fr , technorati.de. </p>
+<p>Essayez avec vos sites américains et vous serez étonné du nombre de squat existants. Le succès de ces sociétés américaines n&rsquo;a pas été pensé à l&rsquo;internationnal alors qu&rsquo;une version française de facebook existera un jour ! </p>
+<p>C&rsquo;est d&rsquo;ailleurs un gros avantage des sociétés européennes. Avoir des pays voisins ne parlant pas la même langue provoque la refléxion sur les problèmatiques d&rsquo;internationalisation et de localisation.</p>
+<p><u><strong>Petit Quizz : </strong></u>Différence entre Localisation et Internationalisation ? Réponse dans les commentaires&#8230;</p>
+<p>&nbsp;</p>
+<p>C&rsquo;est ainsi que netvibes (projet franco-anglais) répond correctement aux différents noms de domaines co.uk, fr, jp, &#8230; (le .de échoue, c&rsquo;est étonnant).</p>
+<p>La conséquence d&rsquo;avoir une refléxion portée sur l&rsquo;international est de penser également aux traductions du site pour les différentes langues. A ce sujet, Netvibes utilise le principe du « user content generated » (contenu généré par les utilisateurs).</p>
+<p>Lorsque vous choisissez votre langue dans les options, vous voyez l&rsquo;état d&rsquo;avancement de la traduction :</p>
+<p><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="195" alt="image" src="juliencar.github.io/wp-content/uploads/2007/11/image.png" width="360" border="0"/> </p>
+<p>Les utilisateurs sont alors invités à participer aus « netvibes translators » afin d&rsquo;améliorer la localisation du site. </p>
+<p>Il est ainsi étonnant de voir que des sites aussi importants que facebook ou twitter ne possèdent ni versions traduites ni noms de domaines nationaux. C&rsquo;est d&rsquo;ailleurs une opportunité qui permet à certains acteurs nationaux d&rsquo;avoir une version « pays » comme CopainsDavant ou Cdiscount.</p>
+				</div>
+				
+								
+				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2007/11/07/le-web-international/#comments">4 Commentaires &#187;</a></small>
+				<br/>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
+						
+			</div>
+				
+		<hr style="display:none;"/>
+			
+						
+			<div class="post" id="post-148">
+				
+				<h2><a href="juliencar.github.io/2007/10/31/3-raisons-douvrir-un-blog-pro/" rel="bookmark" title="Read 3 raisons d&rsquo;ouvrir un blog pro">3 raisons d&rsquo;ouvrir un blog pro</a></h2>
+				<small class="date">
+					<span class="date_day">31</span>
+					<span class="date_month">10</span>
+					<span class="date_year">2007</span>
+				</small>
+				
+				<div class="entry">
+					<p>Ouvrir un blog « professionnel » est un souhait louable. Pourtant cela nécessite un travail régulier et souvent difficile mais voici 3 bonnes raisons de le faire quand-même :</p>
+<p><strong>1. S&rsquo;ouvrir aux autres</strong></p>
+<p>La première raison est la plus évidente, augmenter la visibilité de notre pensée. Un blog est un méga-phone dont les paroles peuvent atteindre le milliard d&rsquo;humains connectés (on va limiter pour le mien car il est écrit en français&#8230; 😉 )</p>
+<p>Les moments où l&rsquo;on peut exprimer pleinement notre pensée de A à Z sont un luxe et un blog permet justement cela.</p>
+<p>De plus, cataloguer, rationnaliser nos idées permet de les ressortir plus facilement en situation réélle et augmente notre pertinence.</p>
+<p><strong>2. Notre nom est une marque</strong></p>
+<p>Idée fondamentale dans la création de mon blog, je souhaite me construire une « autorité » par mes différents articles. Le lecteur peut donc être un ami, un collègue, mais aussi un futur patron.&nbsp; Pour cela, j&rsquo;applique <a href="juliencar.github.io/2007/09/05/10-erreurs-communes-sur-les-blogs/">les règles de bien-séance</a> afin d&rsquo;avoir un site aussi « propre » que possible.</p>
+<p><strong>3. Exprimer implique un travail sur soi</strong></p>
+<p>Finalement, ce que m&rsquo;a le plus apporté l&rsquo;écriture c&rsquo;est ce travail de réflexion sur soi. Une idée en tête doit se transformer et évoluer avant de devenir un article. J&rsquo;ai donc appris à relativiser la technologie. Plus besoin de s&rsquo;enflammer sur la sortie de telle nouvelle version ou sur une annonce de nouveau produit. Je prends du recul et de plus en plus&#8230; (ou sinon c&rsquo;est peut-être l&rsquo;âge qui fait ça 🙂 )</p>
+<p>&nbsp;</p>
+<p>Si vous voyez d&rsquo;autres raisons, n&rsquo;hésitez pas à commenter.</p>
+				</div>
+				
+								
+				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2007/10/31/3-raisons-douvrir-un-blog-pro/#comments">4 Commentaires &#187;</a></small>
+				<br/>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
+						
+			</div>
+				
+		<hr style="display:none;"/>
+			
 		
 		<p class="navigation">
-			<span class="alignleft"><a href="juliencar.github.io/page/2/" >&laquo; Entr&eacute;es Pr&eacute;c&eacute;dantes</a></span>
+			<span class="alignleft"><a href="juliencar.github.io/category/general/page/2/" >&laquo; Entr&eacute;es Pr&eacute;c&eacute;dantes</a></span>
 			<span class="alignright"></span>
 		</p>
 	

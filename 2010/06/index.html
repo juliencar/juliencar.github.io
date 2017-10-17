@@ -8,7 +8,7 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta name="verify-v1" content="EJ2NpUoBJt1jI8pSdXfbuhS9bvxRhKMBK+mK7HPvS+E=" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Julien Carnelos Blog </title>
+<title>Julien Carnelos Blog  &raquo; 2010 &raquo; juin</title>
  <!-- leave this for stats -->
 <link rel="stylesheet" href="juliencar.github.io/wp-content/themes/freshy/style.css" type="text/css" media="screen" title="Freshy"/>
 
@@ -76,7 +76,6 @@ img.emoji {
 
  
 
-<link rel='shortlink' href='http://wp.me/7AZy' />
 
 	<style type="text/css">
 	.menu li a {
@@ -193,7 +192,7 @@ img.emoji {
 	<!-- main menu -->
 			<ul class="menu">
 			
-			<li class="current_page_item">
+			<li class="page_item">
 				<a class="first_menu" href="juliencar.github.io">
 					Accueil				</a>
 			</li>
@@ -217,78 +216,6 @@ img.emoji {
 	<div id="content">
 	
 	<!-- pages -->
-			
-						
-			<div class="post" id="post-179">
-				
-				<h2><a href="juliencar.github.io/2010/07/15/lintgration-continue-open-source-en-net-33/" rel="bookmark" title="Read L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 3/3">L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 3/3</a></h2>
-				<small class="date">
-					<span class="date_day">15</span>
-					<span class="date_month">07</span>
-					<span class="date_year">2010</span>
-				</small>
-				
-				<div class="entry">
-					<p>Parties précédentes:</p>
-<ul>
-<li>Partie 1</li>
-<li>Partie 2</li>
-</ul>
-<h3>Construction continue</h3>
-<p>Nous disposons maintenant d’un programme dont la construction est automatisée. La prochaine étape est de déclencher notre script de compilation automatiquement, d’où le terme de continu.</p>
-<p>Pour cette étape, c’est CruiseControl.Net (<a class="vt-p" href="http://confluence.public.thoughtworks.org/display/CCNET">http://confluence.public.thoughtworks.org/display/CCNET</a>) qui sera utilisé.</p>
-<p>Son principe est de surveiller un « repository » (subversion ou dans notre exemple, un dossier). Lorsqu’il détecte un changement, il va déclencher automatiquement la construction en exécutant NAnt et générer un rapport. De plus, il mettra à notre disposition le livrable résultant.</p>
-<p>Après avoir installé l’outil, par défaut dans « c:\program files\CruiseControl.Net », nous allons le configurer.</p>
-<p>Encore une fois, c’est un fichier xml de paramétrage que nous allons devoir renseigner. Son nom est « cconfig.config » et nous le placerons à la racine de notre projet, au même niveau que le script de compilation.</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image001-2.gif"></a></p>
-<h6><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7image-2.png"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7image-thumb.png" border="0" alt="image" width="497" height="542" /></a></h6>
-<h6><em>Figure : ccnet.config</em></h6>
-<p>Les différents paramètres positionnés sont :</p>
-<ul>
-<li><strong>La source de données</strong> : Pour nous c’est un simple répertoire du système de fichiers. Dans un projet plus conséquent, c’est ici que nous positionnerions la connexion au serveur subversion.</li>
-</ul>
-<ul>
-<li><strong>La temporisation</strong> : 2 secondes d’attente entre chaque vérification. Cela signifie que tout changement du code source implique un délai d’attente de deux secondes avant de lancer la chaîne.</li>
-</ul>
-<ul>
-<li><strong>La chaîne de lancement</strong> : On référence ici l’outil de build Nant ainsi que son fichier de build.</li>
-</ul>
-<ul>
-<li>Le résultat des tests unitaires est intégré au rapport (pour trouver la raison de leur échec plus rapidement le cas échéant).</li>
-</ul>
-<p>Il nous reste ensuite à démarrer CruiseControl. Vous devriez voir apparaitre les logs de démarrage ainsi qu’une première compilation :</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image003-2.jpg"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image003-thumb.jpg" border="0" alt="clip_image003" width="511" height="475" /></a></p>
-<h6><em>Figure : Résultat d’une compilation CruiseControl</em></h6>
-<p>Notre arborescence projet ressemble maintenant à :</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image005-2.jpg"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image005-thumb.jpg" border="0" alt="clip_image005" width="322" height="322" /></a></p>
-<p>Nous pouvons maintenant constater qu’en modifiant notre fichier de code source, nous générons automatiquement un log de construction indiquant si la compilation est réussie ou non.</p>
-<h3>Tableau de bord</h3>
-<p>La dernière étape de notre architecture consiste à mettre à la disposition des utilisateurs un moyen simple de consulter les informations générées par notre serveur CruiseControl.</p>
-<p>Pour les développeurs, il est utile de savoir en temps réél si CruiseControl compile correctement le code du repository. En effet en conaissant au plus tôt un défaut de compilation, ils seront à même d’intervenir et de corriger les bugs apparus. Il existe diverses façons de connaitre l’état du serveur mais un des outils les plus pratiques est le « CC.NET Tray » (<a class="vt-p" href="http://confluence.public.thoughtworks.org/display/CCNET/CCTray">http://confluence.public.thoughtworks.org/display/CCNET/CCTray</a>).</p>
-<p>Il se présente sous la forme d’une icône dans la barre des tâches et suivant sa couleur, indique l’état de la dernière compilation.</p>
-<p>Après installation, vous devez dans les paramètres, ajouter notre projet « localhost / ChaineManip » et valider.</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image007-2.jpg"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image007-thumb.jpg" border="0" alt="clip_image007" width="506" height="253" /></a></p>
-<h3><em>Figure : CCTray en vert, tout va bien </em></h3>
-<p>Pour des utilisateurs comme des chefs de projets ou des architectes, l’information en temps réél n’est pas nécéssaire. En revanche, il est utile d’avoir un apercu sur la durée de l’évolution du code. Par exemple de savoir si la qualité des releases est constante et si le taux builds réussis reste dans un taux constant.</p>
-<p>Le plus intéressant pour ce besoin est le « webdashboard » proposé par CruiseControl.Net. Lors de son installation, il propose la configuration du « dashboard » sur IIS. Ceci va installer une application ASP.NET qui se connecte au serveur CruiseControl.</p>
-<p>Cet outil se présente donc sous la forme d’un site contenant l’historique des constructions.</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image009-2.jpg"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image009-thumb.jpg" border="0" alt="clip_image009" width="439" height="376" /></a></p>
-<h6><em>Figure : dashboard CC.NET</em></h6>
-<h3>Conclusion</h3>
-<p>L’intégration continue est l’aboutisssement d’une démarche d’industrialisation du processus de construction logicielle. La règle d’or : Tout ce qui peut être automatisé doit l’être.</p>
-<p>La première raison à cela est d’enlever toute friction liée à la construction d’une release. En effet, comme nous l’avons vu en introduction, l’erreur est humaine et tout process automatisé supprime complétement le risque d&rsquo;erreur liéé à  des opérations manuelles et non reproductibles.</p>
-<p>La seconde raison est d’augmenter la confiance dans notre maitrise du risque technique. Nous pouvons garantir qu’à un instant T, le projet compile, les tests unitaires passent, etc. Ceci a son importance dans le sens où l’on évite l’effet tunnel et le risque d’intégration au dernier moment.</p>
-<p>Si vous souhaitez aller plus loin sur ce thème, il est possible d’ajouter des étapes intermédiaires à notre chaîne. On pourrait ainsi mettre en place des outils d’analyse de code et de génération de métriques. On pourrait également terminer le build NAnt par la construction d’un package prêt à la livraison (zippé, date de contruction,…) ou par l&rsquo;envoi d&rsquo;un email de notification au client ou à l&rsquo;équipe de QA.</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 3/3</span></span></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
 			
 						
 			<div class="post" id="post-187">
@@ -397,276 +324,9 @@ Partie suivante : Partie 3</p>
 				
 		<hr style="display:none;"/>
 			
-						
-			<div class="post" id="post-193">
-				
-				<h2><a href="juliencar.github.io/2010/05/17/actualites-mai-2010/" rel="bookmark" title="Read Actualités Mai 2010">Actualités Mai 2010</a></h2>
-				<small class="date">
-					<span class="date_day">17</span>
-					<span class="date_month">05</span>
-					<span class="date_year">2010</span>
-				</small>
-				
-				<div class="entry">
-					<p>Vous pouvez continuer à suivre d&rsquo;autres publications techniques autour du monde .NET sur le blog Microsoft SQLI.</p>
-<p>Celui-ci est accessible ici : <a class="vt-p" href="http://blogms.sqli.com/">http://blogms.sqli.com/</a></p>
-<p>Sinon, j&rsquo;ai profité de la sortie du .NET 4.0 ainsi que de Visual Studio pour écrire mon premier article dans un magazine papier.</p>
-<p>Il s&rsquo;agit du <a class="vt-p" href="http://programmez.com/" target="_blank">Programmez! de Mai 2010 n°130</a>.</p>
-<p>Vous pouvez le retrouver en kiosque ou l&rsquo;acheter en PDF en ligne directement. Donc n&rsquo;hésitez pas et si vous avez des questions, vous pouvez toujours m&rsquo;interroger ici.
-		<style type='text/css'>
-			#gallery-1 {
-				margin: auto;
-			}
-			#gallery-1 .gallery-item {
-				float: left;
-				margin-top: 10px;
-				text-align: center;
-				width: 33%;
-			}
-			#gallery-1 img {
-				border: 2px solid #cfcfcf;
-			}
-			#gallery-1 .gallery-caption {
-				margin-left: 0;
-			}
-			/* see gallery_shortcode() in wp-includes/media.php */
-		</style>
-		<div id='gallery-1' class='gallery galleryid-193 gallery-columns-3 gallery-size-thumbnail'><dl class='gallery-item'>
-			<dt class='gallery-icon portrait'>
-				<a href='juliencar.github.io/wp-content/uploads/2010/05/00049.jpg'><img width="150" height="150" src="juliencar.github.io/wp-content/uploads/2010/05/00049-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
-			</dt></dl><dl class='gallery-item'>
-			<dt class='gallery-icon portrait'>
-				<a href='juliencar.github.io/wp-content/uploads/2010/05/00050.jpg'><img width="150" height="150" src="juliencar.github.io/wp-content/uploads/2010/05/00050-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
-			</dt></dl><dl class='gallery-item'>
-			<dt class='gallery-icon portrait'>
-				<a href='juliencar.github.io/wp-content/uploads/2010/05/00051.jpg'><img width="150" height="150" src="juliencar.github.io/wp-content/uploads/2010/05/00051-150x150.jpg" class="attachment-thumbnail size-thumbnail" alt="" /></a>
-			</dt></dl><br style="clear: both" />
-		</div>
-</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur Actualités Mai 2010</span></span></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a>, <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
-			<div class="post" id="post-192">
-				
-				<h2><a href="juliencar.github.io/2008/09/07/google-chrome-bta/" rel="bookmark" title="Read Google Chrome &#8211; B&eacute;ta ?">Google Chrome &#8211; B&eacute;ta ?</a></h2>
-				<small class="date">
-					<span class="date_day">7</span>
-					<span class="date_month">09</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Ou la chronique d&rsquo;un lancement réussi, et <a href="juliencar.github.io/2006/06/23/chronique-d-un-lancement-rate/" target="_blank">ce n&rsquo;est pas évident pour tout le monde</a> (pas évident tout court, il faut reconnaître).</p>
-<p>Google vient donc de sortir son propre navigateur web, dont le développement a commencé il y a 2 ans. Ses principales caractéristiques sont :</p>
-<ul>
-<li>Moteur de rendu WebKit (le même que celui de Safari)</li>
-<li>Une gestion des fenêtres par processus avec la promesse qu&rsquo;en cas de plantage, le&nbsp; navigateur reste opérationnel pour les autres fenêtres.</li>
-<li>Un moteur Javascript qui compile le code et annonce une performance exceptionnelle.</li>
-</ul>
-<p>L&rsquo;objet de cet article n&rsquo;est pas un énième comparatif avec Firefox ou IE mais plutôt de commenter la réussite de Google sur son lancement Produit et sur la qualité de celui-ci. </p>
-<p>En effet, en installant un produit béta, je m&rsquo;attends à subir de nombreux plantages et déconvenues mais en passant une journée complète dessus : recherches google, gmail, deezer, hotmail, installation&nbsp; d&rsquo;un dotnetnuke sur mon local&nbsp; IIS7, je n&rsquo;ai eu aucune erreur&#8230;</p>
-<p>C&rsquo;est si rare que l&rsquo;on ne peut être qu&rsquo;ébahi devant une telle performance ! </p>
-<p>&nbsp;</p>
-<p><a href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewritergooglechromebta-10331ggchrome.jpg"><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="146" alt="ggchrome" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewritergooglechromebta-10331ggchrome-thumb.jpg" width="244" border="0"/></a> </p>
-<p><em>Hotmail Fail :Ouverture d&rsquo;hotmail sous chrome</em></p>
-<p>&nbsp;</p>
-<p>Sur la BD chrome, (et oui, ils ont fait une <a href="http://www.google.com/googlebooks/chrome/index.html" target="_blank">bande dessinée pour la sortie de Chrome</a>), Google met en avant son processus qualité et <a href="http://www.google.com/googlebooks/chrome/index.html#size=small&amp;page=9" target="_blank">ses tests unitaires automatisés et manuels</a>.</p>
-<p><a href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewritergooglechromebta-10331image-2.png"><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="244" alt="image" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewritergooglechromebta-10331image-thumb.png" width="164" border="0"/></a> </p>
-<p>C&rsquo;est un argumentaire de poids et un exemple qui démontre qu&rsquo;avec un environnement de tests performant, il est possible d&rsquo;ouvrir au public avec une version stabilisée.</p>
-<p>On parle souvent du principe « release early, release often » qui signifie qu&rsquo;il est important d&rsquo;avoir un feedback des utilisateurs régulier et le plus souvent possible.&nbsp; Malheureusement pour beaucoup d&rsquo;équipes cela signifie un rush sur les sorties avec une qualité discutable&#8230; </p>
-<p>J&rsquo;ajouterais donc aujourd&rsquo;hui un troisième principe : « release early, release often, <strong>but release it works</strong> » !</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2008/09/07/google-chrome-bta/#comments">11 Commentaires &#187;</a></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/web/" rel="category tag">Web</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
-			<div class="post" id="post-158">
-				
-				<h2><a href="juliencar.github.io/2008/08/29/blog-day-2008/" rel="bookmark" title="Read Blog day 2008">Blog day 2008</a></h2>
-				<small class="date">
-					<span class="date_day">29</span>
-					<span class="date_month">08</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Parce que c&rsquo;est peut-être un bon moyen de relancer ce blog, fêtons ensemble le blog day 2008 !</p>
-<p><a href="http://www.blogday.org/" target="_blank"><img src="http://www.blogday.org/images/badge_red.gif" alt="Blog Day 2008" width="310" height="130" /></a></p>
-<p>Le principe est de recommander aux lecteurs des blogs intéressants, un peu là la manière de <a href="juliencar.github.io/2007/04/17/mon-top-blogs/">« Mon TOP Blogs »</a>.</p>
-<p>Voici donc la liste des 5 blogs élus :</p>
-<ul>
-<li><a href="http://ayende.com/Blog/" title="http://ayende.com/Blog/">http://ayende.com/Blog/</a> : Demi dieu sur terre venu nous expliquer le .NET. Ce type est extrêmement compétent et parle de sujet avancés tels que les DSL.</li>
-<li><a href="http://blogpro.toutantic.net/" title="http://blogpro.toutantic.net/">http://blogpro.toutantic.net/</a> : Aurélien Pelletier nous parle du Web 2/RIA/ROA/REST. De plus j&rsquo;ai eu l&rsquo;occasion de <a href="juliencar.github.io/2008/02/21/compte-rendu-techdays-2008-partie-2/">le voir aux Techdays 2008</a>  et c&rsquo;est un vrai passioné.</li>
-<li><a href="http://www.voxinablog.com/" title="http://www.voxinablog.com/">http://www.voxinablog.com/</a> : Pour des idées et des conseils sur l&rsquo;e-marketing et le réferencement par François Goube.</li>
-<li><a href="http://www.aubryconseil.com/">http://www.aubryconseil.com/</a> : Feedback terrain d&rsquo;un agiliste français Claude Aubry.</li>
-<li><a href="http://www.nioutaik.fr/" title="http://www.nioutaik.fr/">http://www.nioutaik.fr/</a> : 200 % Humour geek</li>
-</ul>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur Blog day 2008</span></span></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
-			<div class="post" id="post-157">
-				
-				<h2><a href="juliencar.github.io/2008/03/20/blogcamp-4-vendredi-28-mars-2008/" rel="bookmark" title="Read Blogcamp #4 &#8211; vendredi 28 mars 2008">Blogcamp #4 &#8211; vendredi 28 mars 2008</a></h2>
-				<small class="date">
-					<span class="date_day">20</span>
-					<span class="date_month">03</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Pour les bordelais qui lisent ce blog (et ils existent&#8230;), sachez que se tiendra la 4ème conférence Blogcamp à Bordeaux le vendredi 28 mars dès 19h.</p>
-<p><a href="http://bordeaux.blogcamp.fr/2008/03/11/blogcamp-bordeaux-4/">On s&rsquo;y retrouve</a> ?</p>
-<p><img src="http://www.blogcamp.fr/images/fly/widget_blogcamp.gif"/></p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2008/03/20/blogcamp-4-vendredi-28-mars-2008/#comments">2 Commentaires &#187;</a></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
-			<div class="post" id="post-156">
-				
-				<h2><a href="juliencar.github.io/2008/02/23/compte-rendu-techdays-2008-partie-3/" rel="bookmark" title="Read Compte rendu Techdays 2008 &#8211; Partie 3">Compte rendu Techdays 2008 &#8211; Partie 3</a></h2>
-				<small class="date">
-					<span class="date_day">23</span>
-					<span class="date_month">02</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Pour terminer de manière exhaustive ce compte rendu, voici la description de la deuxième journée.</p>
-<p>&nbsp;</p>
-<p><strong><u>Présentation générale SQL Server 2008</u></strong> </p>
-<p>Session intéressante car nous avons eu droit à un point de vue 360° sur les nouveautés. </p>
-<p>Je retiens particulièrement le travail apporté sur la partie Reporting. En effet, le moteur était déjà très intéressant dans la version 2005 mais quelque peu limité dans son utilisation par des novices. Avec l&rsquo;arrivée de nouveaux outils orientés « Business », cela sera un argument de plus pour ce produit.</p>
-<p>&nbsp;</p>
-<p><strong><u>Software+Services : Introduction</u></strong></p>
-<p>Session décevante où la première partie a consisté en la lecture des slides.</p>
-<p>J&rsquo;aurais aimé une présentation plus argumentée avec une comparaison des différents moyens pouvant être mis en oeuvre pour mettre en place du Software + Services. </p>
-<p>&nbsp;</p>
-<p><strong><u>Commerce Server 2007</u></strong></p>
-<p>Ayant déjà une expérience sur les problématiques e-commerce et ayant manipulé un peu Commerce Server, j&rsquo;étais intéressé par le sujet. En effet, je souhaitais voir comment l&rsquo;outil était manipulé par des experts du domaine. Et bien, je continue à avoir un à avis favorable sur le sujet et je pense que CS2007 est un des solutions les plus pertinentes actuelles en e-commerce prêt à l&#8217;emploi. L&rsquo;aspect « Out-of-the-box » est un vrai argument avec un starter-site collant au maximum à un besoin standard.</p>
-<p>&nbsp;</p>
-<p><u><strong>Team System Rosario CTP</strong></u></p>
-<p>Session agréablement présentée par deux personnes de chez Winwise. Malheureusement le contenu était relativement pauvre en nouveautés. Rien de transcendant n&rsquo;a été présenté mais juste des améliorations du produit. La conclusion étant de toute façon : « <em>rien ne sert d&rsquo;attendre rosario, passez déjà à Team System 2008</em>« &#8230;</p>
-<p>&nbsp;</p>
-<p><strong><u>Conclusion</u></strong></p>
-<p>L&rsquo;impression d&rsquo;événement de l&rsquo;année pour les développeurs a été amplement confirmée par le nombre de visiteurs (16 000) et la qualité des 300 sessions présentées.&nbsp; Vivement les 2009 😉</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur Compte rendu Techdays 2008 &#8211; Partie 3</span></span></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
-			<div class="post" id="post-155">
-				
-				<h2><a href="juliencar.github.io/2008/02/21/compte-rendu-techdays-2008-partie-2/" rel="bookmark" title="Read Compte rendu Techdays 2008 &#8211; Partie 2">Compte rendu Techdays 2008 &#8211; Partie 2</a></h2>
-				<small class="date">
-					<span class="date_day">21</span>
-					<span class="date_month">02</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Suite de la première journée :</p>
-<h4><u>Nouveautés de C#3</u></h4>
-<p>Session en « speed » pour nous faire un maximum de démonstration sur les nouveautés du langage. Session la plus technique de mon parcours. Car oui je considère que si je viens aux Techndays, c&rsquo;est pour m&rsquo;ouvrir à des horizons et des perspectives différentes et pas pour me former en 2 jours&#8230; Néanmoins cette session fût très intéressante et a largement piqué ma curiosité sur les lambda expressions. </p>
-<p>En dehors de ces fameux lambda, on remarquera surtout la stabilité du langage pour sa troisième version. Preuve en est la qualification de « <em>Sucre syntaxique</em>« <em> </em>sur quasiment toutes les nouveautés du langage.</p>
-<p>&nbsp;</p>
-<h4><u>ROA &#8211; Symposium DNG</u></h4>
-<p>Je mets la note de meilleure session des Techdays à <a href="http://blogpro.toutantic.net/">Aurelien Pelletier</a> pour sa présentation sur ROA (Ressource Oriented Architecture).&nbsp; J&rsquo;ai apprécié d&rsquo;une part le speaker qui a su nous entretenir sur le sujet pendant une heure sans temps mort et d&rsquo;autre part le sujet qui préfigure d&rsquo;une évolution passionnante du web. J&rsquo;engage ceux qui ne connaissent pas encore le sujet à creuser tant cette façon de procéder est en adéquation avec l&rsquo;utilisation du web tel que nous le faisons aujourd&rsquo;hui.</p>
-<p>Pour les <a href="http://blogpro.toutantic.net/2008/02/15/slides-ressource-oriented-architecture/">slides, c&rsquo;est par ici</a>.</p>
-<h4><u>.NET et l&rsquo;Open Source &#8211; Symposium DNG</u></h4>
-<p>La grosse déception de la journée mais je vais tenter d&rsquo;être factuel. J&rsquo;avais une attente assez forte sur cette présentation car étant un « double compétence » Java/.NET, l&rsquo;intérêt d&rsquo;utiliser des outils et des frameworks Open Source est une évidence pour moi. J&rsquo;attendais donc de cette session des retours sur leur utilisation et quels étaient leurs conseils en la matière. </p>
-<p>Malheureusement, Didier Girard et son acolyte se sont contenté d&rsquo;expliquer les principes de l&rsquo;open source avec des généralités limite (Mettre Visual Studio Express sur une liste de produits open-source par exemple), de « torcher » en 3 slides une explication du fonctionnement de Spring et de Hibernate et de conclure que leur projet a été réussi grâce à ces technos.</p>
-<p>Je pense que le public présent n&rsquo;a pas pu apprécier cette session à sa juste valeur. En effet, beaucoup de personnes présentes dans la salle connaissaient déjà des frameworks Open Source et donc , ne pas avoir d&rsquo;éléments factuels, ni de comparaison technique ou grilles de décision fait que la conclusion de la session n&rsquo;a apporté aucune pierre au débat. </p>
-<p>Pour les personnes novices sur le sujet, la session a permis de dissiper un peu de F.U.D sur la peur d&rsquo;utiliser de l&rsquo;open source en environnement Microsoft mais dans ce cas, il fallait mieux mettre en avant et expliquer les outils Spring et Hibernate au lieu de se contenter d&rsquo;afficher le code des tutoriaux. On attendait une explication plus générale et donnant l&rsquo;eau à la bouche et l&rsquo;envie d&rsquo;installer chez soi. </p>
-<p>Dans tous les cas, je salue le travail réalisé pour cette session qui va dans le bon sens et j&rsquo;attends avec impatience les prochaines sessions sur le sujet&#8230;</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2008/02/21/compte-rendu-techdays-2008-partie-2/#comments">1 Commentaire &#187;</a></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
-			<div class="post" id="post-154">
-				
-				<h2><a href="juliencar.github.io/2008/02/19/compte-rendu-techdays-2008-partie-1/" rel="bookmark" title="Read Compte rendu Techdays 2008 &#8211; Partie 1">Compte rendu Techdays 2008 &#8211; Partie 1</a></h2>
-				<small class="date">
-					<span class="date_day">19</span>
-					<span class="date_month">02</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Cela fait maintenant presque une semaine que les TechDays sont passés, le temps nécessaire pour avoir un recul suffisant sur cet événement majeur et épuisant. </p>
-<p>On peut constater que l&rsquo;importance de l&rsquo;évenement va en grandissant et reste le point de rencontre majeur pour tous les développeurs Microsoft. Avec une population de plus de 15 000 visiteurs en 3 jours, la réussite de cette conférence n&rsquo;est pas à questionner&#8230;</p>
-<p>De mon point de vue, j&rsquo;apprécie énormement ce genre d&rsquo;évenement car j&rsquo;ai l&rsquo;impression d&rsquo;être entouré de gens pour qui leur métier et aussi une passion et qui cherchent à toujours avancer dans leurs connaissances.</p>
-<p>C&rsquo;est aussi l&rsquo;occasion de rencontrer de nombreuses personnes ou même de revoir des <a href="http://www.dotmim.com/blogs/mim/default.aspx">ex-collègues</a> (que je salue au passage car ça fait plaisir de voir que le feeling passait toujours autant).</p>
-<p>Après ces quelques mots, je vais me plier à l&rsquo;exercice classique de description des sessions vues.</p>
-<h4><u>Jour 1</u></h4>
-<p>Pour la première journée, il y avait en parallèle le symposium DotNetGuru (DNG) dont le principe est de présenter des thèmes plus « architecturaux » et moins centrés sur la technique. Je considère que c&rsquo;est une chance d&rsquo;avoir accès à cette conférence intérieure et je félicite les organisateurs du choix de l&rsquo;intégrer dans les Techdays. Ils ont pu toucher un public beaucoup plus large et beacoup d&rsquo;intéressés (dont moi) ne seraient pas venu pour les DNG sans les TechDays&nbsp; (Pour des raisons de justification de sortie entre autre).</p>
-<p>Tout cela pour dire que cette première journée tourne beaucoup autour des sessions DNG justement 😉</p>
-<h4><u>Sharepoint WCM </u></h4>
-<p>Pour ma première session, j&rsquo;ai tenté la « Domain Driven Design » présentée par Sami Jabber mais la salle étant pleine je me suis rabattu sur la session Web Content Management sous MOSS 2007. Cette session très intéressante et bien présentée par Stéphane Cordonnier m&rsquo;a rappelé beaucoup de souvenirs sur son ancêtre MCMS 2002. Mais il est heureux de constater que Microsoft a largement remis au goût du jour sa solution de CMS avec une interface Web performante et je n&rsquo;ai pas retrouvé les défauts qui faisaient de MCMS 2002 un produit non fini.</p>
-<p>Finalement pour la « Domain Driven Design », j&rsquo;attendrais le webcast pour en juger mais d&rsquo;après les <a href="http://www.dotnetguru2.org/sami/index.php?title=retours_symposium_dng&amp;more=1&amp;c=1&amp;tb=1&amp;pb=1">quelques échos</a>, la présentation devait être assez <em>perchée</em> !</p>
-<p>&nbsp;</p>
-<p><em>Suite dans un prochain article&#8230;</em></p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2008/02/19/compte-rendu-techdays-2008-partie-1/#comments">1 Commentaire &#187;</a></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
 		
 		<p class="navigation">
-			<span class="alignleft"><a href="juliencar.github.io/page/2/" >&laquo; Entr&eacute;es Pr&eacute;c&eacute;dantes</a></span>
+			<span class="alignleft"></span>
 			<span class="alignright"></span>
 		</p>
 	

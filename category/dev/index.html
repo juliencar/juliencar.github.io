@@ -8,7 +8,7 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta name="verify-v1" content="EJ2NpUoBJt1jI8pSdXfbuhS9bvxRhKMBK+mK7HPvS+E=" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Julien Carnelos Blog </title>
+<title>Julien Carnelos Blog  &raquo; Dev</title>
  <!-- leave this for stats -->
 <link rel="stylesheet" href="juliencar.github.io/wp-content/themes/freshy/style.css" type="text/css" media="screen" title="Freshy"/>
 
@@ -51,6 +51,7 @@
 	<link rel='archives' title='octobre 2005' href='juliencar.github.io/2005/10/' />
 	<link rel='archives' title='septembre 2005' href='juliencar.github.io/2005/09/' />
 <link rel='dns-prefetch' href='//s.w.org' />
+
 		<script type="text/javascript">
 			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
 			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
@@ -76,7 +77,6 @@ img.emoji {
 
  
 
-<link rel='shortlink' href='http://wp.me/7AZy' />
 
 	<style type="text/css">
 	.menu li a {
@@ -193,7 +193,7 @@ img.emoji {
 	<!-- main menu -->
 			<ul class="menu">
 			
-			<li class="current_page_item">
+			<li class="page_item">
 				<a class="first_menu" href="juliencar.github.io">
 					Accueil				</a>
 			</li>
@@ -217,125 +217,6 @@ img.emoji {
 	<div id="content">
 	
 	<!-- pages -->
-			
-						
-			<div class="post" id="post-179">
-				
-				<h2><a href="juliencar.github.io/2010/07/15/lintgration-continue-open-source-en-net-33/" rel="bookmark" title="Read L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 3/3">L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 3/3</a></h2>
-				<small class="date">
-					<span class="date_day">15</span>
-					<span class="date_month">07</span>
-					<span class="date_year">2010</span>
-				</small>
-				
-				<div class="entry">
-					<p>Parties précédentes:</p>
-<ul>
-<li>Partie 1</li>
-<li>Partie 2</li>
-</ul>
-<h3>Construction continue</h3>
-<p>Nous disposons maintenant d’un programme dont la construction est automatisée. La prochaine étape est de déclencher notre script de compilation automatiquement, d’où le terme de continu.</p>
-<p>Pour cette étape, c’est CruiseControl.Net (<a class="vt-p" href="http://confluence.public.thoughtworks.org/display/CCNET">http://confluence.public.thoughtworks.org/display/CCNET</a>) qui sera utilisé.</p>
-<p>Son principe est de surveiller un « repository » (subversion ou dans notre exemple, un dossier). Lorsqu’il détecte un changement, il va déclencher automatiquement la construction en exécutant NAnt et générer un rapport. De plus, il mettra à notre disposition le livrable résultant.</p>
-<p>Après avoir installé l’outil, par défaut dans « c:\program files\CruiseControl.Net », nous allons le configurer.</p>
-<p>Encore une fois, c’est un fichier xml de paramétrage que nous allons devoir renseigner. Son nom est « cconfig.config » et nous le placerons à la racine de notre projet, au même niveau que le script de compilation.</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image001-2.gif"></a></p>
-<h6><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7image-2.png"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7image-thumb.png" border="0" alt="image" width="497" height="542" /></a></h6>
-<h6><em>Figure : ccnet.config</em></h6>
-<p>Les différents paramètres positionnés sont :</p>
-<ul>
-<li><strong>La source de données</strong> : Pour nous c’est un simple répertoire du système de fichiers. Dans un projet plus conséquent, c’est ici que nous positionnerions la connexion au serveur subversion.</li>
-</ul>
-<ul>
-<li><strong>La temporisation</strong> : 2 secondes d’attente entre chaque vérification. Cela signifie que tout changement du code source implique un délai d’attente de deux secondes avant de lancer la chaîne.</li>
-</ul>
-<ul>
-<li><strong>La chaîne de lancement</strong> : On référence ici l’outil de build Nant ainsi que son fichier de build.</li>
-</ul>
-<ul>
-<li>Le résultat des tests unitaires est intégré au rapport (pour trouver la raison de leur échec plus rapidement le cas échéant).</li>
-</ul>
-<p>Il nous reste ensuite à démarrer CruiseControl. Vous devriez voir apparaitre les logs de démarrage ainsi qu’une première compilation :</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image003-2.jpg"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image003-thumb.jpg" border="0" alt="clip_image003" width="511" height="475" /></a></p>
-<h6><em>Figure : Résultat d’une compilation CruiseControl</em></h6>
-<p>Notre arborescence projet ressemble maintenant à :</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image005-2.jpg"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image005-thumb.jpg" border="0" alt="clip_image005" width="322" height="322" /></a></p>
-<p>Nous pouvons maintenant constater qu’en modifiant notre fichier de code source, nous générons automatiquement un log de construction indiquant si la compilation est réussie ou non.</p>
-<h3>Tableau de bord</h3>
-<p>La dernière étape de notre architecture consiste à mettre à la disposition des utilisateurs un moyen simple de consulter les informations générées par notre serveur CruiseControl.</p>
-<p>Pour les développeurs, il est utile de savoir en temps réél si CruiseControl compile correctement le code du repository. En effet en conaissant au plus tôt un défaut de compilation, ils seront à même d’intervenir et de corriger les bugs apparus. Il existe diverses façons de connaitre l’état du serveur mais un des outils les plus pratiques est le « CC.NET Tray » (<a class="vt-p" href="http://confluence.public.thoughtworks.org/display/CCNET/CCTray">http://confluence.public.thoughtworks.org/display/CCNET/CCTray</a>).</p>
-<p>Il se présente sous la forme d’une icône dans la barre des tâches et suivant sa couleur, indique l’état de la dernière compilation.</p>
-<p>Après installation, vous devez dans les paramètres, ajouter notre projet « localhost / ChaineManip » et valider.</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image007-2.jpg"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image007-thumb.jpg" border="0" alt="clip_image007" width="506" height="253" /></a></p>
-<h3><em>Figure : CCTray en vert, tout va bien </em></h3>
-<p>Pour des utilisateurs comme des chefs de projets ou des architectes, l’information en temps réél n’est pas nécéssaire. En revanche, il est utile d’avoir un apercu sur la durée de l’évolution du code. Par exemple de savoir si la qualité des releases est constante et si le taux builds réussis reste dans un taux constant.</p>
-<p>Le plus intéressant pour ce besoin est le « webdashboard » proposé par CruiseControl.Net. Lors de son installation, il propose la configuration du « dashboard » sur IIS. Ceci va installer une application ASP.NET qui se connecte au serveur CruiseControl.</p>
-<p>Cet outil se présente donc sous la forme d’un site contenant l’historique des constructions.</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image009-2.jpg"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image009-thumb.jpg" border="0" alt="clip_image009" width="439" height="376" /></a></p>
-<h6><em>Figure : dashboard CC.NET</em></h6>
-<h3>Conclusion</h3>
-<p>L’intégration continue est l’aboutisssement d’une démarche d’industrialisation du processus de construction logicielle. La règle d’or : Tout ce qui peut être automatisé doit l’être.</p>
-<p>La première raison à cela est d’enlever toute friction liée à la construction d’une release. En effet, comme nous l’avons vu en introduction, l’erreur est humaine et tout process automatisé supprime complétement le risque d&rsquo;erreur liéé à  des opérations manuelles et non reproductibles.</p>
-<p>La seconde raison est d’augmenter la confiance dans notre maitrise du risque technique. Nous pouvons garantir qu’à un instant T, le projet compile, les tests unitaires passent, etc. Ceci a son importance dans le sens où l’on évite l’effet tunnel et le risque d’intégration au dernier moment.</p>
-<p>Si vous souhaitez aller plus loin sur ce thème, il est possible d’ajouter des étapes intermédiaires à notre chaîne. On pourrait ainsi mettre en place des outils d’analyse de code et de génération de métriques. On pourrait également terminer le build NAnt par la construction d’un package prêt à la livraison (zippé, date de contruction,…) ou par l&rsquo;envoi d&rsquo;un email de notification au client ou à l&rsquo;équipe de QA.</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 3/3</span></span></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
-			<div class="post" id="post-187">
-				
-				<h2><a href="juliencar.github.io/2010/06/30/lintgration-continue-open-source-en-net-23/" rel="bookmark" title="Read L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 2/3">L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 2/3</a></h2>
-				<small class="date">
-					<span class="date_day">30</span>
-					<span class="date_month">06</span>
-					<span class="date_year">2010</span>
-				</small>
-				
-				<div class="entry">
-					<p>Partie précédente: Partie 1<br />
-Partie suivante : Partie 3</p>
-<h3>Compilation / Build</h3>
-<p>La seconde étape de mise en place est la réalisation d’un fichier de compilation. Pour cela, nous pouvons nous appuyer sur l’outil open source NAnt (<a class="vt-p" href="http://nant.sourceforge.net">http://nant.sourceforge.net</a>).</p>
-<p>NAnt s’exécute en ligne de commande et prend en paramètre un fichier xml contenant les étapes à effectuer successivement pour emmener le code source dans un état prêt à l’exécution. Le fichier XML se base sur une syntaxe à base de taches contenant des actions sur un principe de dépendance entre actions. Encore une fois, cet article est pretexte à creuser chacun des outils présentés et en ce qui concerne la syntaxe de NAnt, je vous incite à utiliser la documentation en ligne de référence.</p>
-<p>Une fois l’outil installé, il suffit de l’executer en ligne de commande. Il cherchera le premier fichier  « .build » du repertoire et traitera son contenu.</p>
-<p>Pour notre exemple, nous allons donc créer un fichier « ManipChaine.build ».</p>
-<p>Votre arborescence devrait ressembler à ceci :</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bclip-image002-2.jpg"><img style="border-width: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bclip-image002-thumb.jpg" border="0" alt="clip_image002" width="195" height="131" /></a></p>
-<p>La liste des actions de construction sera :</p>
-<ul>
-<li>Nettoyer le repertoire de sortie (les binaires)</li>
-<li>Compiler le code source</li>
-<li>Executer les tests unitaires</li>
-<li>Executer le programme</li>
-</ul>
-<p>Notre exemple est trivial, mais un « vrai » script de construction peut contenir des dizaines d’instruction (zip de fichier, transfert ftp, redémarrage de serveur web). L’objectif étant d’avoir la possibilité, en partant des sources, d’effectuer toute la livraison jusqu’à l’étape déployable (ou même déployé).</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bclip-image003-2.gif"></a></p>
-<h6><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bimage-2.png"><img style="border-width: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bimage-thumb.png" border="0" alt="image" width="507" height="364" /></a></h6>
-<h6><em>Figure : ChaineManip.build</em></h6>
-<p>Testez votre script en démarrant « Nant.exe » depuis le dossier \CI. Attention, vous devez utiliser une fenêtre MS-DOS possédant une référence au compilateur C#. Je vous recommande donc la ligne de commande VS qui se situe dans le menu <em>Démarrer / Visual Studio / Outils</em>.</p>
-<p>Vous devriez ainsi voir :</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bclip-image005-2.jpg"><img style="border-width: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bclip-image005-thumb.jpg" border="0" alt="clip_image005" width="506" height="349" /></a></p>
-<p>Comme on peut le constater, le build est « succeded ». Cela implique que la compilation a réussie et que les tests unitaires sont passés avec succès.</p>
-<p>De manière générale, la notion de script de compilation est essentielle et s’oppose à celle de construction par un poste de développeur. La raison principale est de limiter la dépendance à la configuration propre à chaque développeur (cf : « The F5 Key Is Not a Build Process » &#8211; <a class="vt-p" href="http://www.codinghorror.com/blog/archives/000988.html">http://www.codinghorror.com/blog/archives/000988.html</a>).</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 2/3</span></span></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
 			
 						
 			<div class="post" id="post-167">
@@ -496,64 +377,6 @@ Partie suivante : Partie 3</p>
 		<hr style="display:none;"/>
 			
 						
-			<div class="post" id="post-158">
-				
-				<h2><a href="juliencar.github.io/2008/08/29/blog-day-2008/" rel="bookmark" title="Read Blog day 2008">Blog day 2008</a></h2>
-				<small class="date">
-					<span class="date_day">29</span>
-					<span class="date_month">08</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Parce que c&rsquo;est peut-être un bon moyen de relancer ce blog, fêtons ensemble le blog day 2008 !</p>
-<p><a href="http://www.blogday.org/" target="_blank"><img src="http://www.blogday.org/images/badge_red.gif" alt="Blog Day 2008" width="310" height="130" /></a></p>
-<p>Le principe est de recommander aux lecteurs des blogs intéressants, un peu là la manière de <a href="juliencar.github.io/2007/04/17/mon-top-blogs/">« Mon TOP Blogs »</a>.</p>
-<p>Voici donc la liste des 5 blogs élus :</p>
-<ul>
-<li><a href="http://ayende.com/Blog/" title="http://ayende.com/Blog/">http://ayende.com/Blog/</a> : Demi dieu sur terre venu nous expliquer le .NET. Ce type est extrêmement compétent et parle de sujet avancés tels que les DSL.</li>
-<li><a href="http://blogpro.toutantic.net/" title="http://blogpro.toutantic.net/">http://blogpro.toutantic.net/</a> : Aurélien Pelletier nous parle du Web 2/RIA/ROA/REST. De plus j&rsquo;ai eu l&rsquo;occasion de <a href="juliencar.github.io/2008/02/21/compte-rendu-techdays-2008-partie-2/">le voir aux Techdays 2008</a>  et c&rsquo;est un vrai passioné.</li>
-<li><a href="http://www.voxinablog.com/" title="http://www.voxinablog.com/">http://www.voxinablog.com/</a> : Pour des idées et des conseils sur l&rsquo;e-marketing et le réferencement par François Goube.</li>
-<li><a href="http://www.aubryconseil.com/">http://www.aubryconseil.com/</a> : Feedback terrain d&rsquo;un agiliste français Claude Aubry.</li>
-<li><a href="http://www.nioutaik.fr/" title="http://www.nioutaik.fr/">http://www.nioutaik.fr/</a> : 200 % Humour geek</li>
-</ul>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur Blog day 2008</span></span></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
-			<div class="post" id="post-157">
-				
-				<h2><a href="juliencar.github.io/2008/03/20/blogcamp-4-vendredi-28-mars-2008/" rel="bookmark" title="Read Blogcamp #4 &#8211; vendredi 28 mars 2008">Blogcamp #4 &#8211; vendredi 28 mars 2008</a></h2>
-				<small class="date">
-					<span class="date_day">20</span>
-					<span class="date_month">03</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Pour les bordelais qui lisent ce blog (et ils existent&#8230;), sachez que se tiendra la 4ème conférence Blogcamp à Bordeaux le vendredi 28 mars dès 19h.</p>
-<p><a href="http://bordeaux.blogcamp.fr/2008/03/11/blogcamp-bordeaux-4/">On s&rsquo;y retrouve</a> ?</p>
-<p><img src="http://www.blogcamp.fr/images/fly/widget_blogcamp.gif"/></p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2008/03/20/blogcamp-4-vendredi-28-mars-2008/#comments">2 Commentaires &#187;</a></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
 			<div class="post" id="post-156">
 				
 				<h2><a href="juliencar.github.io/2008/02/23/compte-rendu-techdays-2008-partie-3/" rel="bookmark" title="Read Compte rendu Techdays 2008 &#8211; Partie 3">Compte rendu Techdays 2008 &#8211; Partie 3</a></h2>
@@ -630,35 +453,178 @@ Partie suivante : Partie 3</p>
 		<hr style="display:none;"/>
 			
 						
-			<div class="post" id="post-154">
+			<div class="post" id="post-152">
 				
-				<h2><a href="juliencar.github.io/2008/02/19/compte-rendu-techdays-2008-partie-1/" rel="bookmark" title="Read Compte rendu Techdays 2008 &#8211; Partie 1">Compte rendu Techdays 2008 &#8211; Partie 1</a></h2>
+				<h2><a href="juliencar.github.io/2007/12/11/ruby-on-rails-20/" rel="bookmark" title="Read Ruby on Rails 2.0">Ruby on Rails 2.0</a></h2>
 				<small class="date">
-					<span class="date_day">19</span>
-					<span class="date_month">02</span>
-					<span class="date_year">2008</span>
+					<span class="date_day">11</span>
+					<span class="date_month">12</span>
+					<span class="date_year">2007</span>
 				</small>
 				
 				<div class="entry">
-					<p>Cela fait maintenant presque une semaine que les TechDays sont passés, le temps nécessaire pour avoir un recul suffisant sur cet événement majeur et épuisant. </p>
-<p>On peut constater que l&rsquo;importance de l&rsquo;évenement va en grandissant et reste le point de rencontre majeur pour tous les développeurs Microsoft. Avec une population de plus de 15 000 visiteurs en 3 jours, la réussite de cette conférence n&rsquo;est pas à questionner&#8230;</p>
-<p>De mon point de vue, j&rsquo;apprécie énormement ce genre d&rsquo;évenement car j&rsquo;ai l&rsquo;impression d&rsquo;être entouré de gens pour qui leur métier et aussi une passion et qui cherchent à toujours avancer dans leurs connaissances.</p>
-<p>C&rsquo;est aussi l&rsquo;occasion de rencontrer de nombreuses personnes ou même de revoir des <a href="http://www.dotmim.com/blogs/mim/default.aspx">ex-collègues</a> (que je salue au passage car ça fait plaisir de voir que le feeling passait toujours autant).</p>
-<p>Après ces quelques mots, je vais me plier à l&rsquo;exercice classique de description des sessions vues.</p>
-<h4><u>Jour 1</u></h4>
-<p>Pour la première journée, il y avait en parallèle le symposium DotNetGuru (DNG) dont le principe est de présenter des thèmes plus « architecturaux » et moins centrés sur la technique. Je considère que c&rsquo;est une chance d&rsquo;avoir accès à cette conférence intérieure et je félicite les organisateurs du choix de l&rsquo;intégrer dans les Techdays. Ils ont pu toucher un public beaucoup plus large et beacoup d&rsquo;intéressés (dont moi) ne seraient pas venu pour les DNG sans les TechDays&nbsp; (Pour des raisons de justification de sortie entre autre).</p>
-<p>Tout cela pour dire que cette première journée tourne beaucoup autour des sessions DNG justement 😉</p>
-<h4><u>Sharepoint WCM </u></h4>
-<p>Pour ma première session, j&rsquo;ai tenté la « Domain Driven Design » présentée par Sami Jabber mais la salle étant pleine je me suis rabattu sur la session Web Content Management sous MOSS 2007. Cette session très intéressante et bien présentée par Stéphane Cordonnier m&rsquo;a rappelé beaucoup de souvenirs sur son ancêtre MCMS 2002. Mais il est heureux de constater que Microsoft a largement remis au goût du jour sa solution de CMS avec une interface Web performante et je n&rsquo;ai pas retrouvé les défauts qui faisaient de MCMS 2002 un produit non fini.</p>
-<p>Finalement pour la « Domain Driven Design », j&rsquo;attendrais le webcast pour en juger mais d&rsquo;après les <a href="http://www.dotnetguru2.org/sami/index.php?title=retours_symposium_dng&amp;more=1&amp;c=1&amp;tb=1&amp;pb=1">quelques échos</a>, la présentation devait être assez <em>perchée</em> !</p>
-<p>&nbsp;</p>
-<p><em>Suite dans un prochain article&#8230;</em></p>
+					<p><a href="juliencar.github.io/2006/03/28/ruby-on-rails-11-de-sortie/">Un an et demi s&rsquo;est écoulé depuis la 1.1</a>. Le <a href="http://weblog.rubyonrails.org/2007/12/7/rails-2-0-it-s-done">changelog</a> est à la mesure du changement de numéro de version.</p>
+<p>Toutes ces nouveautés paraissent bien utiles, malheureusement je n&rsquo;ai plus le temps de suivre de près l&rsquo;évolution de ce langage.</p>
+<p>En effet, ces derniers temps font que je penche désormais beaucoup du coté .NET, mais je reste attaché profondément aux valeurs portées par ce framework. (<a href="juliencar.github.io/2007/02/01/rails-mon-amant-de-programmation/">Un jour peut-être que j&rsquo;y reviendrais</a>&#8230;)</p>
+<p>C&rsquo;est pour cela aussi que je vois venir avec grand intérêt le <a href="http://weblogs.asp.net/scottgu/archive/2007/10/14/asp-net-mvc-framework.aspx">framework ASP.NET MVC</a> dont les personnes à l&rsquo;origine sont également fans de Rails.</p>
+<p>Petite liste des fonctionnalités « inspirées » :</p>
+<ul>
+<li>Séparation des rôles : Possibilité de tester la couche Controlleur sans conteneur web</li>
+<li>Hautement extensif et pluggable : Comme tout est à base d&rsquo;interfaces, il est facile d&rsquo;intégrer un moteur d&rsquo;injection de dépendance</li>
+<li>URL Mapping Natif : Idem des routes de Rails</li>
+<li>Moteur de template pour la couche présentation</li>
+<li>etc.</li>
+</ul>
+<p>Tant mieux si Ruby on Rails peut apporter sa philosophie dans d&rsquo;autres environnements, tout le monde y sera gagnant.</p>
 				</div>
 				
 								
-				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2008/02/19/compte-rendu-techdays-2008-partie-1/#comments">1 Commentaire &#187;</a></small>
+				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2007/12/11/ruby-on-rails-20/#comments">6 Commentaires &#187;</a></small>
 				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a>, <a href="juliencar.github.io/category/ruby/" rel="category tag">Ruby</a></small>
+						
+			</div>
+				
+		<hr style="display:none;"/>
+			
+						
+			<div class="post" id="post-140">
+				
+				<h2><a href="juliencar.github.io/2007/09/19/bonnes-pratiques-sous-subversion/" rel="bookmark" title="Read Bonnes pratiques sous Subversion">Bonnes pratiques sous Subversion</a></h2>
+				<small class="date">
+					<span class="date_day">19</span>
+					<span class="date_month">09</span>
+					<span class="date_year">2007</span>
+				</small>
+				
+				<div class="entry">
+					<p>Un gestionnaire de source est toujours la 1ère étape dans une démarche d&rsquo;industrialisation.</p>
+<p>Si vous n&rsquo;avez pas vos sources dans un référentiel au moment où vous lisez ces lignes, arrêtez-vous de suite et prenez le temps de le faire (<a href="http://fr.wikipedia.org/wiki/Subversion_(logiciel)">Subversion</a>).</p>
+<p>La gestion de ce référentiel implique une certaine rigueur et une liste « officielle » de <a href="http://svn.collab.net/repos/svn/trunk/doc/user/svn-best-practices.html">bonnes pratiques vient d&rsquo;être publié sur le site</a> de Subversion. J&rsquo;ai repris les idées les plus intéressantes :</p>
+<ul>
+<li><strong>Utiliser une arborescence propre</strong></li>
+</ul>
+<p>Quand on initialise le référentiel, il est facile de créer une arborescence inefficiente qu&rsquo;il faudra supporter jusqu&rsquo;au bout du projet. La recommandation officielle est de créer les trois dossiers : <em>/trunk, /branches et /tags</em>.</p>
+<ul>
+<li><strong>Archiver des modifications fonctionnelles</strong></li>
+</ul>
+<p>Lorsque vous archivez vos modifications sur le source, celles-ci doivent être cohérentes et former un tout. Cela permettra un meilleur suivi des changements. De plus, ce changement pourra plus facilement être lié à un bug ou autre&#8230;</p>
+<ul>
+<li><strong>Relier le gestionnaire des bugs</strong></li>
+</ul>
+<p>Il est fondamental de pouvoir être capable de relier un changement du source avec une « unité de travail ». Cette unité pouvant être un bug, une demande de changement, une évolution, etc. De ce fait, il faut associer à chaque archivage l&rsquo;ID de l&rsquo;item traité.</p>
+<ul>
+<li><strong>Patient avec les gros fichiers</strong></li>
+</ul>
+<p>Subversion sait gérer le versionning des fichiers binaires mais de manière générale, manipuler ces fichiers engendrent des problèmes de latence qui peuvent devenir important. En effet, les fichiers sont copiés plusieurs fois en plusieurs endroits (dans le temp, dans le working local, &#8230;) et sur de gros transferts, le développeur devra être patient.</p>
+<ul>
+<li><strong>Savoir quand créer une branche</strong></li>
+</ul>
+<p>Point critique, car la création d&rsquo;une nouvelle branche n&rsquo;est l&rsquo;affaire que d&rsquo;un compromis. Compromis entre l&rsquo;avantage de pouvoir écrire du code non dépendant de la branche principale avec l&rsquo;inconvénient de devoir un jour fusionner la branche avec le code principal.</p>
+<p>A cette problématique, la réponse est question de contexte. Néanmoins trois stratégies se distinguent :</p>
+<ol>
+<li><em>Aucune branche :</em> Demande une forte discipline de la part des développeurs qui devront minimiser les risques de « break » du build.</li>
+<li><em>Branche pour toute évolution :</em> Chaque évolution est micro-managée et validée avant intégration dans la branche principale. Adapté aux gros projets possédant une équipe dédiée aux builds.</li>
+<li><em>Branche pour les dev &gt; 10j.</em> Il s&rsquo;agit de définir une limite où les développements qui nécessitent plus de temps se feront dans une branche à part. Pour information, c&rsquo;est la technique employée dans l&rsquo;équipe de développement du serveur Subversion.</li>
+</ol>
+<p>&nbsp;</p>
+<p>Comme toujours, beaucoup de ces pratiques sont l&rsquo;œuvre du bon sens. Si vous possédez également des techniques intéressantes, n&rsquo;hésitez pas à partager 😉</p>
+				</div>
+				
+								
+				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2007/09/19/bonnes-pratiques-sous-subversion/#comments">4 Commentaires &#187;</a></small>
+				<br/>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a></small>
+						
+			</div>
+				
+		<hr style="display:none;"/>
+			
+						
+			<div class="post" id="post-123">
+				
+				<h2><a href="juliencar.github.io/2007/06/26/la-barrire-de-lidentification/" rel="bookmark" title="Read La barri&egrave;re de l&rsquo;identification">La barri&egrave;re de l&rsquo;identification</a></h2>
+				<small class="date">
+					<span class="date_day">26</span>
+					<span class="date_month">06</span>
+					<span class="date_year">2007</span>
+				</small>
+				
+				<div class="entry">
+					<p>Dans le monde web, un principe de base d&rsquo;avoir le moins de friction possible. Le cas d&rsquo;école est un processus de vente sur un site de e-commerce où l&rsquo;on voit s&rsquo;afficher en haut de la page « <strong>Etape 1/12</strong>« . Le taux de transformation (achat validé) se résume à ceux qui auront le courage d&rsquo;aller au bout des douze étapes supposés. Autant dire beaucoup d&rsquo;abandons !</p>
+<p>Une autre friction importante est celle de la création d&rsquo;un compte. C&rsquo;est pourtant l&rsquo;étape cruciale qui nous fait passer <strong>de simple anonyme à client</strong>. C&rsquo;est un lien que le client crée de lui même en acceptant de s&rsquo;incrire sur le site parce qu&rsquo;il est convaincu du bien fondé&nbsp;de son choix. <strong>C&rsquo;est un acte fort et engageant</strong>. </p>
+<p>Et pourtant, les exemples ne manquent pas de voir s&rsquo;afficher un formulaire de 3 pages avec une quinzaine de zones à remplir <em>jusqu&rsquo;à l&rsquo;âge de mon&nbsp;chat</em>&#8230;&nbsp; C&rsquo;est un peu comme si on entrait dans un magasin pour acheter des chaussettes et qu&rsquo;un vendeur nous saute dessus pour prendre des mesures des pieds à la tête&#8230;</p>
+<p><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="240" alt="image" src="juliencar.github.io/wp-content/uploads/2007/06/windowslivewriterlabarriredelidentification-124a3image-1.png" width="233" border="0"/> </p>
+<p>Certaines sites font des efforts, voir ici Twitter qui demande le minimum vital pour s&rsquo;incrire :</p>
+<p><a href="juliencar.github.io/wp-content/uploads/2007/06/windowslivewriterlabarriredelidentification-124a3image-2.png" atomicselection="true"><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="240" alt="image" src="juliencar.github.io/wp-content/uploads/2007/06/windowslivewriterlabarriredelidentification-124a3image-thumb-1.png" width="182" border="0"/></a> </p>
+<p>C&rsquo;est aujourd&rsquo;hui la tendance la plus commune et la plus pertinante dans cette logique d&rsquo;abaissement de la barrière d&rsquo;entrée.</p>
+<p><em>Mais on peut mieux faire. </em></p>
+<p>Lorsqu&rsquo;un visiteur vient pour la première fois sur un site, on l&rsquo;authentifie grâce à un cookie session. Ce cookie permet de reconnaitre le visiteur pendant la durée de sa navigation sur le site. Mieux, le cookie peut être rendu persistant et dans ce cas, il reste dans le cache du navigateur autant que le site le souhaite. </p>
+<p>L&rsquo;idée est donc d&rsquo;utiliser ce lien (le cookie) qui unit visiteur et site pour&nbsp;faire du visiteur un privilégié.&nbsp;</p>
+<p>Un exemple qui implémente parfaitement ce concept est <a href="http://www.netvibes.com">Netvibes</a>.</p>
+<p><img style="border-top-width: 0px; border-left-width: 0px; border-bottom-width: 0px; border-right-width: 0px" height="239" alt="image" src="juliencar.github.io/wp-content/uploads/2007/06/windowslivewriterlabarriredelidentification-124a3image-3.png" width="240" border="0"/> </p>
+<p>En effet, la première fois que l&rsquo;on se connecte sur ce site, on se retrouve devant une page portail pleine. On peut alors s&rsquo;amuser avec le site et déplacer, bouger et remplacer les blocs&#8230;</p>
+<p>Si je ferme mon navigateur et que je reviens&nbsp;1 mois&nbsp;plus tard sur netvibes (<em>je confirme le mois</em>, je viens de tester),&nbsp;grâce au cookie persistant, Netvibes a&nbsp;retrouvé mon identité et <strong>m&rsquo;affiche le portail tel que je l&rsquo;avais laissé </strong>la dernière fois !&nbsp;</p>
+<p>Ce sentiment de « privilégié » incite fortement l&rsquo;utilisateur à s&rsquo;incrire car il a déjà investi du temps à « jouer » avec le site, donc pour ne pas tout perdre, le mieux est de s&rsquo;incrire&#8230;</p>
+				</div>
+				
+								
+				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur La barri&egrave;re de l&rsquo;identification</span></span></small>
+				<br/>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/web/" rel="category tag">Web</a></small>
+						
+			</div>
+				
+		<hr style="display:none;"/>
+			
+						
+			<div class="post" id="post-118">
+				
+				<h2><a href="juliencar.github.io/2007/06/25/blog-driven-developpement/" rel="bookmark" title="Read Blog Driven Development">Blog Driven Development</a></h2>
+				<small class="date">
+					<span class="date_day">25</span>
+					<span class="date_month">06</span>
+					<span class="date_year">2007</span>
+				</small>
+				
+				<div class="entry">
+					<p>Je ne resiste pas à l&rsquo;envie de vous citer cet extrait.</p>
+<p><strong>Blog Driven Developpement (BDD) :</strong></p>
+<p>Consacré aux développeurs qui pensent constamment au sujet de leur prochain post. Presque chaque ligne de code intéressante qu’ils produisent finit en post sur leur blog.</p>
+<p>J&rsquo;ai des noms&#8230; 😀</p>
+<p>Via <a href="http://dubois.vct.free.fr/blog/?p=48">VDU</a>.</p>
+				</div>
+				
+								
+				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2007/06/25/blog-driven-developpement/#comments">2 Commentaires &#187;</a></small>
+				<br/>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
+						
+			</div>
+				
+		<hr style="display:none;"/>
+			
+						
+			<div class="post" id="post-113">
+				
+				<h2><a href="juliencar.github.io/2007/06/11/vendre-laccessibilite/" rel="bookmark" title="Read Vendre l&rsquo;accessibilité">Vendre l&rsquo;accessibilité</a></h2>
+				<small class="date">
+					<span class="date_day">11</span>
+					<span class="date_month">06</span>
+					<span class="date_year">2007</span>
+				</small>
+				
+				<div class="entry">
+					<p>Comme on dit, « L&rsquo;accessiblité est l&rsquo;affaire de tous ».</p>
+<p>Pourtant, c&rsquo;est une pratique que l&rsquo;on retrouve rarement mise en place dans les projets web. Le site Pompage.net propose une explication :<br />
+<a href="http://www.pompage.net/pompe/10-raisons/">10 raisons expliquant pourquoi les clients n’ont que faire de l’accessibilité</a> que je trouve très pertinente&#8230;</p>
+<p>Le tableau dressé n&rsquo;est pas encourageant mais ils proposent quelques voies de sortie intéressantes. Pour ma part, je retiendrais surtout le fait de vendre l&rsquo;accessibilité comme une exigence fonctionnelle et non plus comme un problème technique.</p>
+				</div>
+				
+								
+				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur Vendre l&rsquo;accessibilité</span></span></small>
+				<br/>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a></small>
 						
 			</div>
 				
@@ -666,7 +632,7 @@ Partie suivante : Partie 3</p>
 			
 		
 		<p class="navigation">
-			<span class="alignleft"><a href="juliencar.github.io/page/2/" >&laquo; Entr&eacute;es Pr&eacute;c&eacute;dantes</a></span>
+			<span class="alignleft"><a href="juliencar.github.io/category/dev/page/2/" >&laquo; Entr&eacute;es Pr&eacute;c&eacute;dantes</a></span>
 			<span class="alignright"></span>
 		</p>
 	

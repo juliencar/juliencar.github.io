@@ -8,7 +8,7 @@
 <head profile="http://gmpg.org/xfn/11">
 <meta name="verify-v1" content="EJ2NpUoBJt1jI8pSdXfbuhS9bvxRhKMBK+mK7HPvS+E=" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Julien Carnelos Blog </title>
+<title>Julien Carnelos Blog  &raquo; DotNet</title>
  <!-- leave this for stats -->
 <link rel="stylesheet" href="juliencar.github.io/wp-content/themes/freshy/style.css" type="text/css" media="screen" title="Freshy"/>
 
@@ -51,6 +51,7 @@
 	<link rel='archives' title='octobre 2005' href='juliencar.github.io/2005/10/' />
 	<link rel='archives' title='septembre 2005' href='juliencar.github.io/2005/09/' />
 <link rel='dns-prefetch' href='//s.w.org' />
+
 		<script type="text/javascript">
 			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.8.2"}};
 			!function(a,b,c){function d(a){var b,c,d,e,f=String.fromCharCode;if(!k||!k.fillText)return!1;switch(k.clearRect(0,0,j.width,j.height),k.textBaseline="top",k.font="600 32px Arial",a){case"flag":return k.fillText(f(55356,56826,55356,56819),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,56826,8203,55356,56819),0,0),c=j.toDataURL(),b!==c&&(k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447),0,0),b=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447),0,0),c=j.toDataURL(),b!==c);case"emoji4":return k.fillText(f(55358,56794,8205,9794,65039),0,0),d=j.toDataURL(),k.clearRect(0,0,j.width,j.height),k.fillText(f(55358,56794,8203,9794,65039),0,0),e=j.toDataURL(),d!==e}return!1}function e(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i,j=b.createElement("canvas"),k=j.getContext&&j.getContext("2d");for(i=Array("flag","emoji4"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
@@ -76,7 +77,6 @@ img.emoji {
 
  
 
-<link rel='shortlink' href='http://wp.me/7AZy' />
 
 	<style type="text/css">
 	.menu li a {
@@ -193,7 +193,7 @@ img.emoji {
 	<!-- main menu -->
 			<ul class="menu">
 			
-			<li class="current_page_item">
+			<li class="page_item">
 				<a class="first_menu" href="juliencar.github.io">
 					Accueil				</a>
 			</li>
@@ -217,125 +217,6 @@ img.emoji {
 	<div id="content">
 	
 	<!-- pages -->
-			
-						
-			<div class="post" id="post-179">
-				
-				<h2><a href="juliencar.github.io/2010/07/15/lintgration-continue-open-source-en-net-33/" rel="bookmark" title="Read L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 3/3">L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 3/3</a></h2>
-				<small class="date">
-					<span class="date_day">15</span>
-					<span class="date_month">07</span>
-					<span class="date_year">2010</span>
-				</small>
-				
-				<div class="entry">
-					<p>Parties précédentes:</p>
-<ul>
-<li>Partie 1</li>
-<li>Partie 2</li>
-</ul>
-<h3>Construction continue</h3>
-<p>Nous disposons maintenant d’un programme dont la construction est automatisée. La prochaine étape est de déclencher notre script de compilation automatiquement, d’où le terme de continu.</p>
-<p>Pour cette étape, c’est CruiseControl.Net (<a class="vt-p" href="http://confluence.public.thoughtworks.org/display/CCNET">http://confluence.public.thoughtworks.org/display/CCNET</a>) qui sera utilisé.</p>
-<p>Son principe est de surveiller un « repository » (subversion ou dans notre exemple, un dossier). Lorsqu’il détecte un changement, il va déclencher automatiquement la construction en exécutant NAnt et générer un rapport. De plus, il mettra à notre disposition le livrable résultant.</p>
-<p>Après avoir installé l’outil, par défaut dans « c:\program files\CruiseControl.Net », nous allons le configurer.</p>
-<p>Encore une fois, c’est un fichier xml de paramétrage que nous allons devoir renseigner. Son nom est « cconfig.config » et nous le placerons à la racine de notre projet, au même niveau que le script de compilation.</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image001-2.gif"></a></p>
-<h6><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7image-2.png"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7image-thumb.png" border="0" alt="image" width="497" height="542" /></a></h6>
-<h6><em>Figure : ccnet.config</em></h6>
-<p>Les différents paramètres positionnés sont :</p>
-<ul>
-<li><strong>La source de données</strong> : Pour nous c’est un simple répertoire du système de fichiers. Dans un projet plus conséquent, c’est ici que nous positionnerions la connexion au serveur subversion.</li>
-</ul>
-<ul>
-<li><strong>La temporisation</strong> : 2 secondes d’attente entre chaque vérification. Cela signifie que tout changement du code source implique un délai d’attente de deux secondes avant de lancer la chaîne.</li>
-</ul>
-<ul>
-<li><strong>La chaîne de lancement</strong> : On référence ici l’outil de build Nant ainsi que son fichier de build.</li>
-</ul>
-<ul>
-<li>Le résultat des tests unitaires est intégré au rapport (pour trouver la raison de leur échec plus rapidement le cas échéant).</li>
-</ul>
-<p>Il nous reste ensuite à démarrer CruiseControl. Vous devriez voir apparaitre les logs de démarrage ainsi qu’une première compilation :</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image003-2.jpg"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image003-thumb.jpg" border="0" alt="clip_image003" width="511" height="475" /></a></p>
-<h6><em>Figure : Résultat d’une compilation CruiseControl</em></h6>
-<p>Notre arborescence projet ressemble maintenant à :</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image005-2.jpg"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image005-thumb.jpg" border="0" alt="clip_image005" width="322" height="322" /></a></p>
-<p>Nous pouvons maintenant constater qu’en modifiant notre fichier de code source, nous générons automatiquement un log de construction indiquant si la compilation est réussie ou non.</p>
-<h3>Tableau de bord</h3>
-<p>La dernière étape de notre architecture consiste à mettre à la disposition des utilisateurs un moyen simple de consulter les informations générées par notre serveur CruiseControl.</p>
-<p>Pour les développeurs, il est utile de savoir en temps réél si CruiseControl compile correctement le code du repository. En effet en conaissant au plus tôt un défaut de compilation, ils seront à même d’intervenir et de corriger les bugs apparus. Il existe diverses façons de connaitre l’état du serveur mais un des outils les plus pratiques est le « CC.NET Tray » (<a class="vt-p" href="http://confluence.public.thoughtworks.org/display/CCNET/CCTray">http://confluence.public.thoughtworks.org/display/CCNET/CCTray</a>).</p>
-<p>Il se présente sous la forme d’une icône dans la barre des tâches et suivant sa couleur, indique l’état de la dernière compilation.</p>
-<p>Après installation, vous devez dans les paramètres, ajouter notre projet « localhost / ChaineManip » et valider.</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image007-2.jpg"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image007-thumb.jpg" border="0" alt="clip_image007" width="506" height="253" /></a></p>
-<h3><em>Figure : CCTray en vert, tout va bien </em></h3>
-<p>Pour des utilisateurs comme des chefs de projets ou des architectes, l’information en temps réél n’est pas nécéssaire. En revanche, il est utile d’avoir un apercu sur la durée de l’évolution du code. Par exemple de savoir si la qualité des releases est constante et si le taux builds réussis reste dans un taux constant.</p>
-<p>Le plus intéressant pour ce besoin est le « webdashboard » proposé par CruiseControl.Net. Lors de son installation, il propose la configuration du « dashboard » sur IIS. Ceci va installer une application ASP.NET qui se connecte au serveur CruiseControl.</p>
-<p>Cet outil se présente donc sous la forme d’un site contenant l’historique des constructions.</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image009-2.jpg"><img style="border: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriterlintgrationcontinueopensourceen.net33-101d7clip-image009-thumb.jpg" border="0" alt="clip_image009" width="439" height="376" /></a></p>
-<h6><em>Figure : dashboard CC.NET</em></h6>
-<h3>Conclusion</h3>
-<p>L’intégration continue est l’aboutisssement d’une démarche d’industrialisation du processus de construction logicielle. La règle d’or : Tout ce qui peut être automatisé doit l’être.</p>
-<p>La première raison à cela est d’enlever toute friction liée à la construction d’une release. En effet, comme nous l’avons vu en introduction, l’erreur est humaine et tout process automatisé supprime complétement le risque d&rsquo;erreur liéé à  des opérations manuelles et non reproductibles.</p>
-<p>La seconde raison est d’augmenter la confiance dans notre maitrise du risque technique. Nous pouvons garantir qu’à un instant T, le projet compile, les tests unitaires passent, etc. Ceci a son importance dans le sens où l’on évite l’effet tunnel et le risque d’intégration au dernier moment.</p>
-<p>Si vous souhaitez aller plus loin sur ce thème, il est possible d’ajouter des étapes intermédiaires à notre chaîne. On pourrait ainsi mettre en place des outils d’analyse de code et de génération de métriques. On pourrait également terminer le build NAnt par la construction d’un package prêt à la livraison (zippé, date de contruction,…) ou par l&rsquo;envoi d&rsquo;un email de notification au client ou à l&rsquo;équipe de QA.</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 3/3</span></span></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
-			<div class="post" id="post-187">
-				
-				<h2><a href="juliencar.github.io/2010/06/30/lintgration-continue-open-source-en-net-23/" rel="bookmark" title="Read L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 2/3">L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 2/3</a></h2>
-				<small class="date">
-					<span class="date_day">30</span>
-					<span class="date_month">06</span>
-					<span class="date_year">2010</span>
-				</small>
-				
-				<div class="entry">
-					<p>Partie précédente: Partie 1<br />
-Partie suivante : Partie 3</p>
-<h3>Compilation / Build</h3>
-<p>La seconde étape de mise en place est la réalisation d’un fichier de compilation. Pour cela, nous pouvons nous appuyer sur l’outil open source NAnt (<a class="vt-p" href="http://nant.sourceforge.net">http://nant.sourceforge.net</a>).</p>
-<p>NAnt s’exécute en ligne de commande et prend en paramètre un fichier xml contenant les étapes à effectuer successivement pour emmener le code source dans un état prêt à l’exécution. Le fichier XML se base sur une syntaxe à base de taches contenant des actions sur un principe de dépendance entre actions. Encore une fois, cet article est pretexte à creuser chacun des outils présentés et en ce qui concerne la syntaxe de NAnt, je vous incite à utiliser la documentation en ligne de référence.</p>
-<p>Une fois l’outil installé, il suffit de l’executer en ligne de commande. Il cherchera le premier fichier  « .build » du repertoire et traitera son contenu.</p>
-<p>Pour notre exemple, nous allons donc créer un fichier « ManipChaine.build ».</p>
-<p>Votre arborescence devrait ressembler à ceci :</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bclip-image002-2.jpg"><img style="border-width: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bclip-image002-thumb.jpg" border="0" alt="clip_image002" width="195" height="131" /></a></p>
-<p>La liste des actions de construction sera :</p>
-<ul>
-<li>Nettoyer le repertoire de sortie (les binaires)</li>
-<li>Compiler le code source</li>
-<li>Executer les tests unitaires</li>
-<li>Executer le programme</li>
-</ul>
-<p>Notre exemple est trivial, mais un « vrai » script de construction peut contenir des dizaines d’instruction (zip de fichier, transfert ftp, redémarrage de serveur web). L’objectif étant d’avoir la possibilité, en partant des sources, d’effectuer toute la livraison jusqu’à l’étape déployable (ou même déployé).</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bclip-image003-2.gif"></a></p>
-<h6><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bimage-2.png"><img style="border-width: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bimage-thumb.png" border="0" alt="image" width="507" height="364" /></a></h6>
-<h6><em>Figure : ChaineManip.build</em></h6>
-<p>Testez votre script en démarrant « Nant.exe » depuis le dossier \CI. Attention, vous devez utiliser une fenêtre MS-DOS possédant une référence au compilateur C#. Je vous recommande donc la ligne de commande VS qui se situe dans le menu <em>Démarrer / Visual Studio / Outils</em>.</p>
-<p>Vous devriez ainsi voir :</p>
-<p><a class="vt-p" href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bclip-image005-2.jpg"><img style="border-width: 0px;" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewriter77aa006b372a-1014bclip-image005-thumb.jpg" border="0" alt="clip_image005" width="506" height="349" /></a></p>
-<p>Comme on peut le constater, le build est « succeded ». Cela implique que la compilation a réussie et que les tests unitaires sont passés avec succès.</p>
-<p>De manière générale, la notion de script de compilation est essentielle et s’oppose à celle de construction par un poste de développeur. La raison principale est de limiter la dépendance à la configuration propre à chaque développeur (cf : « The F5 Key Is Not a Build Process » &#8211; <a class="vt-p" href="http://www.codinghorror.com/blog/archives/000988.html">http://www.codinghorror.com/blog/archives/000988.html</a>).</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur L&rsquo;int&eacute;gration continue Open Source en .NET &#8211; 2/3</span></span></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
 			
 						
 			<div class="post" id="post-167">
@@ -455,105 +336,6 @@ Partie suivante : Partie 3</p>
 		<hr style="display:none;"/>
 			
 						
-			<div class="post" id="post-192">
-				
-				<h2><a href="juliencar.github.io/2008/09/07/google-chrome-bta/" rel="bookmark" title="Read Google Chrome &#8211; B&eacute;ta ?">Google Chrome &#8211; B&eacute;ta ?</a></h2>
-				<small class="date">
-					<span class="date_day">7</span>
-					<span class="date_month">09</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Ou la chronique d&rsquo;un lancement réussi, et <a href="juliencar.github.io/2006/06/23/chronique-d-un-lancement-rate/" target="_blank">ce n&rsquo;est pas évident pour tout le monde</a> (pas évident tout court, il faut reconnaître).</p>
-<p>Google vient donc de sortir son propre navigateur web, dont le développement a commencé il y a 2 ans. Ses principales caractéristiques sont :</p>
-<ul>
-<li>Moteur de rendu WebKit (le même que celui de Safari)</li>
-<li>Une gestion des fenêtres par processus avec la promesse qu&rsquo;en cas de plantage, le&nbsp; navigateur reste opérationnel pour les autres fenêtres.</li>
-<li>Un moteur Javascript qui compile le code et annonce une performance exceptionnelle.</li>
-</ul>
-<p>L&rsquo;objet de cet article n&rsquo;est pas un énième comparatif avec Firefox ou IE mais plutôt de commenter la réussite de Google sur son lancement Produit et sur la qualité de celui-ci. </p>
-<p>En effet, en installant un produit béta, je m&rsquo;attends à subir de nombreux plantages et déconvenues mais en passant une journée complète dessus : recherches google, gmail, deezer, hotmail, installation&nbsp; d&rsquo;un dotnetnuke sur mon local&nbsp; IIS7, je n&rsquo;ai eu aucune erreur&#8230;</p>
-<p>C&rsquo;est si rare que l&rsquo;on ne peut être qu&rsquo;ébahi devant une telle performance ! </p>
-<p>&nbsp;</p>
-<p><a href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewritergooglechromebta-10331ggchrome.jpg"><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="146" alt="ggchrome" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewritergooglechromebta-10331ggchrome-thumb.jpg" width="244" border="0"/></a> </p>
-<p><em>Hotmail Fail :Ouverture d&rsquo;hotmail sous chrome</em></p>
-<p>&nbsp;</p>
-<p>Sur la BD chrome, (et oui, ils ont fait une <a href="http://www.google.com/googlebooks/chrome/index.html" target="_blank">bande dessinée pour la sortie de Chrome</a>), Google met en avant son processus qualité et <a href="http://www.google.com/googlebooks/chrome/index.html#size=small&amp;page=9" target="_blank">ses tests unitaires automatisés et manuels</a>.</p>
-<p><a href="juliencar.github.io/wp-content/uploads/2008/09/windowslivewritergooglechromebta-10331image-2.png"><img style="border-right: 0px; border-top: 0px; border-left: 0px; border-bottom: 0px" height="244" alt="image" src="juliencar.github.io/wp-content/uploads/2008/09/windowslivewritergooglechromebta-10331image-thumb.png" width="164" border="0"/></a> </p>
-<p>C&rsquo;est un argumentaire de poids et un exemple qui démontre qu&rsquo;avec un environnement de tests performant, il est possible d&rsquo;ouvrir au public avec une version stabilisée.</p>
-<p>On parle souvent du principe « release early, release often » qui signifie qu&rsquo;il est important d&rsquo;avoir un feedback des utilisateurs régulier et le plus souvent possible.&nbsp; Malheureusement pour beaucoup d&rsquo;équipes cela signifie un rush sur les sorties avec une qualité discutable&#8230; </p>
-<p>J&rsquo;ajouterais donc aujourd&rsquo;hui un troisième principe : « release early, release often, <strong>but release it works</strong> » !</p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2008/09/07/google-chrome-bta/#comments">11 Commentaires &#187;</a></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/web/" rel="category tag">Web</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
-			<div class="post" id="post-158">
-				
-				<h2><a href="juliencar.github.io/2008/08/29/blog-day-2008/" rel="bookmark" title="Read Blog day 2008">Blog day 2008</a></h2>
-				<small class="date">
-					<span class="date_day">29</span>
-					<span class="date_month">08</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Parce que c&rsquo;est peut-être un bon moyen de relancer ce blog, fêtons ensemble le blog day 2008 !</p>
-<p><a href="http://www.blogday.org/" target="_blank"><img src="http://www.blogday.org/images/badge_red.gif" alt="Blog Day 2008" width="310" height="130" /></a></p>
-<p>Le principe est de recommander aux lecteurs des blogs intéressants, un peu là la manière de <a href="juliencar.github.io/2007/04/17/mon-top-blogs/">« Mon TOP Blogs »</a>.</p>
-<p>Voici donc la liste des 5 blogs élus :</p>
-<ul>
-<li><a href="http://ayende.com/Blog/" title="http://ayende.com/Blog/">http://ayende.com/Blog/</a> : Demi dieu sur terre venu nous expliquer le .NET. Ce type est extrêmement compétent et parle de sujet avancés tels que les DSL.</li>
-<li><a href="http://blogpro.toutantic.net/" title="http://blogpro.toutantic.net/">http://blogpro.toutantic.net/</a> : Aurélien Pelletier nous parle du Web 2/RIA/ROA/REST. De plus j&rsquo;ai eu l&rsquo;occasion de <a href="juliencar.github.io/2008/02/21/compte-rendu-techdays-2008-partie-2/">le voir aux Techdays 2008</a>  et c&rsquo;est un vrai passioné.</li>
-<li><a href="http://www.voxinablog.com/" title="http://www.voxinablog.com/">http://www.voxinablog.com/</a> : Pour des idées et des conseils sur l&rsquo;e-marketing et le réferencement par François Goube.</li>
-<li><a href="http://www.aubryconseil.com/">http://www.aubryconseil.com/</a> : Feedback terrain d&rsquo;un agiliste français Claude Aubry.</li>
-<li><a href="http://www.nioutaik.fr/" title="http://www.nioutaik.fr/">http://www.nioutaik.fr/</a> : 200 % Humour geek</li>
-</ul>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur Blog day 2008</span></span></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
-			<div class="post" id="post-157">
-				
-				<h2><a href="juliencar.github.io/2008/03/20/blogcamp-4-vendredi-28-mars-2008/" rel="bookmark" title="Read Blogcamp #4 &#8211; vendredi 28 mars 2008">Blogcamp #4 &#8211; vendredi 28 mars 2008</a></h2>
-				<small class="date">
-					<span class="date_day">20</span>
-					<span class="date_month">03</span>
-					<span class="date_year">2008</span>
-				</small>
-				
-				<div class="entry">
-					<p>Pour les bordelais qui lisent ce blog (et ils existent&#8230;), sachez que se tiendra la 4ème conférence Blogcamp à Bordeaux le vendredi 28 mars dès 19h.</p>
-<p><a href="http://bordeaux.blogcamp.fr/2008/03/11/blogcamp-bordeaux-4/">On s&rsquo;y retrouve</a> ?</p>
-<p><img src="http://www.blogcamp.fr/images/fly/widget_blogcamp.gif"/></p>
-				</div>
-				
-								
-				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2008/03/20/blogcamp-4-vendredi-28-mars-2008/#comments">2 Commentaires &#187;</a></small>
-				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
-						
-			</div>
-				
-		<hr style="display:none;"/>
-			
-						
 			<div class="post" id="post-156">
 				
 				<h2><a href="juliencar.github.io/2008/02/23/compte-rendu-techdays-2008-partie-3/" rel="bookmark" title="Read Compte rendu Techdays 2008 &#8211; Partie 3">Compte rendu Techdays 2008 &#8211; Partie 3</a></h2>
@@ -630,35 +412,200 @@ Partie suivante : Partie 3</p>
 		<hr style="display:none;"/>
 			
 						
-			<div class="post" id="post-154">
+			<div class="post" id="post-152">
 				
-				<h2><a href="juliencar.github.io/2008/02/19/compte-rendu-techdays-2008-partie-1/" rel="bookmark" title="Read Compte rendu Techdays 2008 &#8211; Partie 1">Compte rendu Techdays 2008 &#8211; Partie 1</a></h2>
+				<h2><a href="juliencar.github.io/2007/12/11/ruby-on-rails-20/" rel="bookmark" title="Read Ruby on Rails 2.0">Ruby on Rails 2.0</a></h2>
 				<small class="date">
-					<span class="date_day">19</span>
-					<span class="date_month">02</span>
-					<span class="date_year">2008</span>
+					<span class="date_day">11</span>
+					<span class="date_month">12</span>
+					<span class="date_year">2007</span>
 				</small>
 				
 				<div class="entry">
-					<p>Cela fait maintenant presque une semaine que les TechDays sont passés, le temps nécessaire pour avoir un recul suffisant sur cet événement majeur et épuisant. </p>
-<p>On peut constater que l&rsquo;importance de l&rsquo;évenement va en grandissant et reste le point de rencontre majeur pour tous les développeurs Microsoft. Avec une population de plus de 15 000 visiteurs en 3 jours, la réussite de cette conférence n&rsquo;est pas à questionner&#8230;</p>
-<p>De mon point de vue, j&rsquo;apprécie énormement ce genre d&rsquo;évenement car j&rsquo;ai l&rsquo;impression d&rsquo;être entouré de gens pour qui leur métier et aussi une passion et qui cherchent à toujours avancer dans leurs connaissances.</p>
-<p>C&rsquo;est aussi l&rsquo;occasion de rencontrer de nombreuses personnes ou même de revoir des <a href="http://www.dotmim.com/blogs/mim/default.aspx">ex-collègues</a> (que je salue au passage car ça fait plaisir de voir que le feeling passait toujours autant).</p>
-<p>Après ces quelques mots, je vais me plier à l&rsquo;exercice classique de description des sessions vues.</p>
-<h4><u>Jour 1</u></h4>
-<p>Pour la première journée, il y avait en parallèle le symposium DotNetGuru (DNG) dont le principe est de présenter des thèmes plus « architecturaux » et moins centrés sur la technique. Je considère que c&rsquo;est une chance d&rsquo;avoir accès à cette conférence intérieure et je félicite les organisateurs du choix de l&rsquo;intégrer dans les Techdays. Ils ont pu toucher un public beaucoup plus large et beacoup d&rsquo;intéressés (dont moi) ne seraient pas venu pour les DNG sans les TechDays&nbsp; (Pour des raisons de justification de sortie entre autre).</p>
-<p>Tout cela pour dire que cette première journée tourne beaucoup autour des sessions DNG justement 😉</p>
-<h4><u>Sharepoint WCM </u></h4>
-<p>Pour ma première session, j&rsquo;ai tenté la « Domain Driven Design » présentée par Sami Jabber mais la salle étant pleine je me suis rabattu sur la session Web Content Management sous MOSS 2007. Cette session très intéressante et bien présentée par Stéphane Cordonnier m&rsquo;a rappelé beaucoup de souvenirs sur son ancêtre MCMS 2002. Mais il est heureux de constater que Microsoft a largement remis au goût du jour sa solution de CMS avec une interface Web performante et je n&rsquo;ai pas retrouvé les défauts qui faisaient de MCMS 2002 un produit non fini.</p>
-<p>Finalement pour la « Domain Driven Design », j&rsquo;attendrais le webcast pour en juger mais d&rsquo;après les <a href="http://www.dotnetguru2.org/sami/index.php?title=retours_symposium_dng&amp;more=1&amp;c=1&amp;tb=1&amp;pb=1">quelques échos</a>, la présentation devait être assez <em>perchée</em> !</p>
-<p>&nbsp;</p>
-<p><em>Suite dans un prochain article&#8230;</em></p>
+					<p><a href="juliencar.github.io/2006/03/28/ruby-on-rails-11-de-sortie/">Un an et demi s&rsquo;est écoulé depuis la 1.1</a>. Le <a href="http://weblog.rubyonrails.org/2007/12/7/rails-2-0-it-s-done">changelog</a> est à la mesure du changement de numéro de version.</p>
+<p>Toutes ces nouveautés paraissent bien utiles, malheureusement je n&rsquo;ai plus le temps de suivre de près l&rsquo;évolution de ce langage.</p>
+<p>En effet, ces derniers temps font que je penche désormais beaucoup du coté .NET, mais je reste attaché profondément aux valeurs portées par ce framework. (<a href="juliencar.github.io/2007/02/01/rails-mon-amant-de-programmation/">Un jour peut-être que j&rsquo;y reviendrais</a>&#8230;)</p>
+<p>C&rsquo;est pour cela aussi que je vois venir avec grand intérêt le <a href="http://weblogs.asp.net/scottgu/archive/2007/10/14/asp-net-mvc-framework.aspx">framework ASP.NET MVC</a> dont les personnes à l&rsquo;origine sont également fans de Rails.</p>
+<p>Petite liste des fonctionnalités « inspirées » :</p>
+<ul>
+<li>Séparation des rôles : Possibilité de tester la couche Controlleur sans conteneur web</li>
+<li>Hautement extensif et pluggable : Comme tout est à base d&rsquo;interfaces, il est facile d&rsquo;intégrer un moteur d&rsquo;injection de dépendance</li>
+<li>URL Mapping Natif : Idem des routes de Rails</li>
+<li>Moteur de template pour la couche présentation</li>
+<li>etc.</li>
+</ul>
+<p>Tant mieux si Ruby on Rails peut apporter sa philosophie dans d&rsquo;autres environnements, tout le monde y sera gagnant.</p>
 				</div>
 				
 								
-				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2008/02/19/compte-rendu-techdays-2008-partie-1/#comments">1 Commentaire &#187;</a></small>
+				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2007/12/11/ruby-on-rails-20/#comments">6 Commentaires &#187;</a></small>
 				<br/>
-				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/general/" rel="category tag">General</a></small>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a>, <a href="juliencar.github.io/category/ruby/" rel="category tag">Ruby</a></small>
+						
+			</div>
+				
+		<hr style="display:none;"/>
+			
+						
+			<div class="post" id="post-108">
+				
+				<h2><a href="juliencar.github.io/2007/06/05/silverlight-le-retour-de-lapplet/" rel="bookmark" title="Read Silverlight, le retour de l&rsquo;applet">Silverlight, le retour de l&rsquo;applet</a></h2>
+				<small class="date">
+					<span class="date_day">5</span>
+					<span class="date_month">06</span>
+					<span class="date_year">2007</span>
+				</small>
+				
+				<div class="entry">
+					<p> <em>Ce post traine depuis trop longtemps dans mes brouillons, alors je publie avant qu&rsquo;il ne soit complètement périmé&#8230; </em></p>
+<p><a href="http://www.silverlight.fr/">Silverlight </a>a été récemment annoncé par Microsoft au MIX07.</p>
+<p>C&rsquo;est une annonce intéressante car le produit est annoncé comme un Flash-Killer. Il faut oser aller sur ce marché où l&rsquo;on considère aujourd&rsquo;hui que le lecteur Flash d&rsquo;Adobe est installé sur 95% des postes, ce qui représente une part de marché assez conséquente.</p>
+<p>Silverlight est donc le nom officiel d&rsquo;un produit en gestation depuis quelques temps. Son nom de code était « WPF-E ». Il empruntait son nom à <a href="http://wpf.netfx3.com/">la technologie WPF</a> qui permet de réaliser des interfaces graphiques vectorielles puissantes en .NET 3.0. Un truc sympa et classique en WPF est qu&rsquo;une vidéo est considérée comme une texture. On peut donc associer notre vidéo à un bouton ou la coller sur un cube en 3D assez simplement. Le WPF utilise également une sémantique de balises pour décrire l&rsquo;interface. Il s&rsquo;agit simplement d&rsquo;un fichier XML et le langage du XAML.</p>
+<p>Microsoft a donc repris les bonnes idées de son WPF (le XAML, la simplicité d&rsquo;utilisation,&#8230;) et en a réalisé une version « Everywhere ». La version WPF faisant partie du framework .NET 3.0, elle est limitée à l&rsquo;environnement Window&#8230;</p>
+<p>Silverlight est donc une runtime qui s&rsquo;installe sur le poste client qui est aujourd&rsquo;hui disponible pour Windows et pour Mac (une version Linux sera proposé, implémentée en Mono).</p>
+<p>Ce qui est amusant avec cette annonce est de voir à quelle point le mouvement est cyclique dans les inventions informatiques.  En effet, depuis un bon moment maintenant on voulait alléger le client au maximum et utiliser le navigateur comme interface universelle. Les applets Java sont déclarés mortes et le succès des technologies AJAX ne sont pas là pour démentir.</p>
+<p>Aujourd&rsquo;hui, il parait aberrant de proposer à un client une solution où il faudrait installer une runtime sur le poste de l&rsquo;utilisateur et pourtant c&rsquo;est exactement ce que Microsoft nous propose.</p>
+<p>Alors quelle est la pérennité d&rsquo;une telle offre ?</p>
+<p>A l&rsquo;heure actuellle, Silverlight n&rsquo;est pas prêt de remplacer toute le savoir que l&rsquo;on commence à maîtriser sur les technos AJAX. Là où Silverlight peut séduire c&rsquo;est par sa simplicité : pour une partie d&rsquo;un projet ASP.NET où le besoin ergonomique est fort, on implémente une partie sous la forme d&rsquo;un projet .NET Silverlight. Résultat, on ne change pas de technologie et on se retrouve avec une interface jolie. Si beaucoup de projets ouvrent cette voie, le cercle vertueux de l&rsquo;adoption pourra démarrer. Car avec 10 ans de différences, j&rsquo;espère que Microsoft aura prévu de contrer les arguments qui ont fait l' »échec » des applets Java.</p>
+				</div>
+				
+								
+				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur Silverlight, le retour de l&rsquo;applet</span></span></small>
+				<br/>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a></small>
+						
+			</div>
+				
+		<hr style="display:none;"/>
+			
+						
+			<div class="post" id="post-104">
+				
+				<h2><a href="juliencar.github.io/2007/04/02/conseils-pour-reprendre-du-code-existant/" rel="bookmark" title="Read Conseils pour reprendre du code existant">Conseils pour reprendre du code existant</a></h2>
+				<small class="date">
+					<span class="date_day">2</span>
+					<span class="date_month">04</span>
+					<span class="date_year">2007</span>
+				</small>
+				
+				<div class="entry">
+					<p>Les projets de maintenance sur de l&rsquo;existant ou le « legacy code » sont fréquents.</p>
+<p>Le « legacy code » possède une définition simple : « <em>C&rsquo;est du code si vieux/mal fait qu&rsquo;on a peur d&rsquo;y toucher</em>« . Malheureusement, il faut tout de même y toucher à un moment pour le maintenir ou ajouter des évolutions (et <a href="juliencar.github.io/2007/03/27/le-statu-quo/">combattre le statu-quo</a>!). C&rsquo;est à ce moment là que quelques bonnes pratiques peuvent sauver le développeur de la démence&#8230;</p>
+<p>Je vous recommande la lecture d&rsquo;un excellent article de Jeremy Miller, <a href="http://codebetter.com/blogs/jeremy.miller/archive/2007/04/01/Removing-the-_2200_Legacy_2200_-from-your-Code.aspx">Removing the « Legacy » from your Code</a> qui décrit sa stratégie générale.</p>
+<p><strong>Les points essentiels que j&rsquo;ai retenu et déjà appliqué :</strong></p>
+<p>1. <strong>Gérer ses ressources</strong> : Inutile de partir bille en tête dans une refonte totale du projet. Cela sera sûrement une perte de temps. On ne touche aux morceaux de l&rsquo;appli que lorsque l&rsquo;on veut ajouter une valeur métier. A ce moment là, il faudra en profiter pour améliorer le design de l&rsquo;application.</p>
+<p>2. <strong>Automatiser le build </strong>: C&rsquo;est souvent un point critique sur les anciennes applications. Une procédure de compilation / déploiement en 15 étapes à la main est source d&rsquo;erreur et de problèmes de configuration. C&rsquo;est ici que les outils de build comme ANT/NANT (Maven, Rake,&#8230;) peuvent être utilisés à bon escient.</p>
+<p>3.  <strong>Avoir une vision globale de où l&rsquo;on souhaite aller</strong> : On peut mettre en place au sein de l&rsquo;équipe une vision du projet à long terme. Par exemple, se fixer comme objectif de remplacer l&rsquo;ancienne couche DAO par le framework ORM Hibernate/NHibernate. Un wiki collaboratif interne conviendra très bien à ce genre d&rsquo;informations.</p>
+<p>4. <strong>Visible du management</strong> : Dans l&rsquo;idéal, il faut que l&rsquo;idée de cette amélioration du projet par à coups et en douceur soit acceptée par la direction. Avec son support, les modifications majeures seront plus faciles à porter. Par expérience, malheureusement ça sera rarement le cas. Dans ce cas il suffit d&rsquo;adopter la technique du sous-marin : J&rsquo;intègre dans mon chiffrage le temps d&rsquo;effectuer les mises à jour techniques nécessaires.  Attention, cette technique doit avoir l&rsquo;aval de l&rsquo;équipe technique sous peine de se retrouver isolé&#8230;</p>
+<p>5. <strong>Interdiction d&rsquo;abîmer le code</strong> : Le code source du projet est déjà suffisament ancien, toute modification de celui-ci doit respecter la qualité attendue. Aucune verrue supplémentaire ne doit être tolérée.</p>
+				</div>
+				
+								
+				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2007/04/02/conseils-pour-reprendre-du-code-existant/#comments">1 Commentaire &#187;</a></small>
+				<br/>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dev/" rel="category tag">Dev</a>, <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a>, <a href="juliencar.github.io/category/java/" rel="category tag">Java</a></small>
+						
+			</div>
+				
+		<hr style="display:none;"/>
+			
+						
+			<div class="post" id="post-95">
+				
+				<h2><a href="juliencar.github.io/2007/02/07/problegraveme-d-installation-net/" rel="bookmark" title="Read problème d&rsquo;installation .NET ?">problème d&rsquo;installation .NET ?</a></h2>
+				<small class="date">
+					<span class="date_day">7</span>
+					<span class="date_month">02</span>
+					<span class="date_year">2007</span>
+				</small>
+				
+				<div class="entry">
+					<p>Pour référence, 3 posts utiles :</p>
+<ul>
+<li><a href="http://blogs.msdn.com/astebner/articles/454956.aspx">Unified .NET Framework Troubleshooting Guide</a></li>
+<li><a href="http://blogs.msdn.com/astebner/articles/492809.aspx">Visual Studio 2005 and .NET Framework 2.0 Setup Troubleshooting Guide</a></li>
+<li><a href="http://blogs.msdn.com/astebner/archive/2006/05/30/611355.aspx">Automated cleanup tool to remove the .NET Framework 2.0</a></li>
+</ul>
+<p>&nbsp;</p>
+<p>A garder bien au chaud, c&rsquo;est vraiment utile ! 😉</p>
+				</div>
+				
+								
+				<small class="postmetadata">Commentaires : <span>Commentaires fermés<span class="screen-reader-text"> sur problème d&rsquo;installation .NET ?</span></span></small>
+				<br/>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a></small>
+						
+			</div>
+				
+		<hr style="display:none;"/>
+			
+						
+			<div class="post" id="post-90">
+				
+				<h2><a href="juliencar.github.io/2007/01/05/situation-du-developpement-net-sous-windows-vista/" rel="bookmark" title="Read Situation du développement .NET sous Windows Vista">Situation du développement .NET sous Windows Vista</a></h2>
+				<small class="date">
+					<span class="date_day">5</span>
+					<span class="date_month">01</span>
+					<span class="date_year">2007</span>
+				</small>
+				
+				<div class="entry">
+					</p>
+<p>Pour situer, Windows Vista est sortie en version finale (RTM) depuis le mois de novembre et sa sortie « boîte »&nbsp;est prévue le 30 janvier 2007 .</p>
+<p>Il est donc parfaitement possible pour les développeurs disposant de la MSDN d&rsquo;installer sur&nbsp;un poste de développement une version de Windows Vista .</p>
+<p>Je relativise ce fait, sachant pertinement que cela représente un faible pourcentage de développeurs qui oseront franchir le pas dès aujourd&rsquo;hui. Mais il n&#8217;empêche que Microsoft se doit d&rsquo;assurer un fonctionnement normal pour les gens ayant sauté ce pas (oui comme moi&#8230;).</p>
+<p>Mon soucis du jour concerne le développement .NET. En effet, la version finale de Windows Vista <strong>n&rsquo;est pas compatible</strong> avec Visual Studio 2005. Or, VS 2005 c&rsquo;est pourtant l&rsquo;outil de référence pour le développement, c&rsquo;est un produit Microsoft et il est sorti en novembre 2005, ce qui fait plus d&rsquo;un an !</p>
+<p>Ainsi, lorsque je lance Visual Studio j&rsquo;ai droit&nbsp;au joli message d&rsquo;avertissement que voici :</p>
+<p><img src="http://julien.carnelos.free.fr/blog/images/Dev/Incompatibilite_vista_vs.jpg" alt="" /></p>
+<p>&nbsp;</p>
+<p>Je peux concevoir que Visual Studio est un logiciel complexe qui nécéssite une intéraction forte avec le système d&rsquo;exploitation (c&rsquo;est également ce qui en fait une de ses forces), en revanche là où cela devient moyen c&rsquo;est quand on apprend qu&rsquo;un SP1 était prévu pour VS2005 en décembre. Ce que tout le monde espérait, c&rsquo;était une compatibilité VS2005 / Vista. Et bien perdu, et il faudra attendre la sortie d&rsquo;une version spéciale du SP1 dédiée à Vista. Et ce patch ne sera disponible que lors de la sortie officielle de la bête&#8230;</p>
+<p>Pour relativiser,ces problèmes de compatibilité ne sont pas forcément apparents. J&rsquo;ai ainsi pu donner une semaine complète de formation .NET sans tomber sur un os lié à Vista, mais pour tout développement sérieux, je <strong>ne conseille pas</strong> le passage sous Vista étant donné la situation (Si vous y tenez quand même, vous pouvez <a href="http://ericappel.net/blog/UsingVisualStudio2005OnVista.aspx" hreflang="en">vous aider de ce post</a>). </p>
+<p>&nbsp;</p>
+<p>Juste pour faire peur à ceux qui tenteraient l&rsquo;expérience, voici la liste (exaustive j&rsquo;espère) des problèmes potentiels :</p>
+<p><a href="http://msdn2.microsoft.com/en-us/vstudio/aa972193.aspx">Visual Studio 2005 on Windows Vista Issue List : Running with normal user permissions</a></p>
+<p><a href="http://msdn2.microsoft.com/en-us/vstudio/aa964140.aspx">Visual Studio 2005 on Windows Vista Issue List : Running with elevated administrator permissions</a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Sql Server 2005 n&rsquo;est pas en reste, mais c&rsquo;est un logiciel serveur donc je suis plus conciliant 😀</p>
+<p><a href="http://www.microsoft.com/sql/howtobuy/windowsvistasupport.mspx">Microsoft SQL Server 2005 on « Microsoft Windows Server Longhorn » or Microsoft Windows Vista</a></p>
+<p>Et il faudra donc attendre la SP2 pour avoir une compatibilité totale.</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>Pour conclure, je suis sûr que les développeurs Java sont mieux lotis sous Vista&#8230; Enfin, Eclipse démarre 🙂</p>
+				</div>
+				
+								
+				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2007/01/05/situation-du-developpement-net-sous-windows-vista/#comments">1 Commentaire &#187;</a></small>
+				<br/>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a></small>
+						
+			</div>
+				
+		<hr style="display:none;"/>
+			
+						
+			<div class="post" id="post-79">
+				
+				<h2><a href="juliencar.github.io/2006/11/17/office-2007-dispo-sur-la-msdn-sauf-pour-la-france/" rel="bookmark" title="Read Office 2007 dispo sur la MSDN&#8230; sauf pour la France">Office 2007 dispo sur la MSDN&#8230; sauf pour la France</a></h2>
+				<small class="date">
+					<span class="date_day">17</span>
+					<span class="date_month">11</span>
+					<span class="date_year">2006</span>
+				</small>
+				
+				<div class="entry">
+					<p>Je lis ce matin que <a href="http://codebetter.com/blogs/sam.gentile/archive/2006/11/13/New-and-Notable-125-_2D00_-Office-2007.aspx" hreflang="en">Office 2007 est disponible sur la MSDN</a>. Je me connecte pour la télécharger et là surprise&nbsp;:</p>
+<blockquote>
+<p><strong>Note to Customers in France :</strong> Office 2007 has not been authorized for supply, import or export to or from France. If you are located in France, Microsoft does not authorize the download of this product, until further notice.</p>
+</blockquote>
+<p>Quelqu&rsquo;un est au courant de cette histoire&nbsp;?</p>
+<p><strong>Update :</strong> C&rsquo;etait juste une question d&rsquo;autorisation. Office 2007 est donc maintenant disponible ainsi que Vista RTM. En revanche pour l&rsquo;instant, ce sont juste les versions américaines&#8230; vivement la FR&nbsp;!</p>
+				</div>
+				
+								
+				<small class="postmetadata">Commentaires : <a href="juliencar.github.io/2006/11/17/office-2007-dispo-sur-la-msdn-sauf-pour-la-france/#comments">1 Commentaire &#187;</a></small>
+				<br/>
+				<small class="postmetadata">Cat&eacute;gories : <a href="juliencar.github.io/category/dotnet/" rel="category tag">DotNet</a></small>
 						
 			</div>
 				
@@ -666,7 +613,7 @@ Partie suivante : Partie 3</p>
 			
 		
 		<p class="navigation">
-			<span class="alignleft"><a href="juliencar.github.io/page/2/" >&laquo; Entr&eacute;es Pr&eacute;c&eacute;dantes</a></span>
+			<span class="alignleft"><a href="juliencar.github.io/category/dotnet/page/2/" >&laquo; Entr&eacute;es Pr&eacute;c&eacute;dantes</a></span>
 			<span class="alignright"></span>
 		</p>
 	
